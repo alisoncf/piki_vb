@@ -1,0 +1,56 @@
+Attribute VB_Name = "sped_empresa"
+        Public Type sped_empresa
+                codigo As String
+                cnpj As String
+                apelido As String
+                cpf As String
+                UF As String
+                IE As String
+                nome As String
+                cod_mun As String
+                im As String
+                suframa As String
+                ind_perfil As String
+                ind_atv As String
+                fantasia As String
+                cep As String
+                endereco As String
+                numero As String
+                complemento As String
+                bairro As String
+                fone As String
+                fax As String
+                email As String
+        End Type
+
+Public Sub gravasped_empresa(codigo As String, cnpj As String, apelido As String, cpf As String, UF As String, IE As String, nome As String, cod_mun As String, im As String, suframa As String, ind_perfil As String, ind_atv As String, fantasia As String, cep As String, endereco As String, numero As String, complemento As String, bairro As String, fone As String, fax As String, email As String)
+        strSQL = " insert into sped_empresa(codigo,cnpj,apelido,cpf,UF,IE,nome,cod_mun,im,suframa,ind_perfil,ind_atv,fantasia,cep,endereco,numero,complemento,bairro,fone,fax,email)values("
+        strSQL = strSQL & "'" & codigo & "',"
+        strSQL = strSQL & "'" & cnpj & "',"
+        strSQL = strSQL & "'" & apelido & "',"
+        strSQL = strSQL & "'" & cpf & "',"
+        strSQL = strSQL & "'" & UF & "',"
+        strSQL = strSQL & "'" & IE & "',"
+        strSQL = strSQL & "'" & nome & "',"
+        strSQL = strSQL & "'" & cod_mun & "',"
+        strSQL = strSQL & "'" & im & "',"
+        strSQL = strSQL & "'" & suframa & "',"
+        strSQL = strSQL & "'" & ind_perfil & "',"
+        strSQL = strSQL & "'" & ind_atv & "',"
+        strSQL = strSQL & "'" & fantasia & "',"
+        strSQL = strSQL & "'" & cep & "',"
+        strSQL = strSQL & "'" & endereco & "',"
+        strSQL = strSQL & "'" & numero & "',"
+        strSQL = strSQL & "'" & complemento & "',"
+        strSQL = strSQL & "'" & bairro & "',"
+        strSQL = strSQL & "'" & fone & "',"
+        strSQL = strSQL & "'" & fax & "',"
+        strSQL = strSQL & "'" & email & "'"
+        strSQL = strSQL & ")"
+        conn.Execute strSQL
+
+End Sub
+
+Sub Alterasped_empresa()
+(codigo as string,cnpj as string,apelido as string,cpf as string,UF as string,IE as string,nome as string,cod_mun as string,im as string,suframa as string,ind_perfil as string,ind_atv as string,fantasia as string,cep as string,endereco as string,numero as string,complemento as string,bairro as string,fone as string,fax as string,email as string))
+strSQL = " update sped_empresa set codigo= & " '" & codigo & "'"",cnpj= & "'" & cnpj & "'"",apelido= & "'" & apelido & "'"",cpf= & "'" & cpf & "'"",UF= & "'" & UF & "'"",IE= & "'" & IE & "'"",nome= & "'" & nome & "'"",cod_mun= & "'" & cod_mun & "'"",im= & "'" & im & "'"",suframa= & "'" & suframa & "'"",ind_perfil= & "'" & ind_perfil & "'"",ind_atv= & "'" & ind_atv & "'"",fantasia= & "'" & fantasia & "'"",cep= & "'" & cep & "'"",endereco= & "'" & endereco & "'"",numero= & "'" & numero & "'"",complemento= & "'" & complemento & "'"",bairro= & "'" & bairro & "'"",fone= & "'" & fone & "'"",fax= & "'" & fax & "'"",email= & "'" & email & "'"(codigo as string,cnpj as string,apelido as string,cpf as string,UF as string,IE as string,nome as string,cod_mun as string,im as string,suframa as string,ind_perfil as string,ind_atv as string,fantasia as string,cep as string,endereco as string,numero as string,complemento as string,bairro as string,fone as string,fax as string,email as string))

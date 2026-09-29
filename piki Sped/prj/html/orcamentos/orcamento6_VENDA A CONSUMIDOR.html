@@ -1,0 +1,158 @@
+﻿<html>
+  <head>
+    <title>Orçamento</title>
+    <style>
+      /* CSS para posicionar a tabela no rodapé da página impressa */
+      @media print {
+        .footer-table {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          margin-top: 1cm;
+        }
+      }
+      .borda {
+        border: 1px solid;
+        text-align: left;
+        font-size: 16px;
+        font-weight: normal;
+      }
+      .cabecalho_coluna {
+        border: 1px solid;
+        text-align: left;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      /* Adicione este estilo para que todas as células tenham borda */
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        border: 1px solid;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <table style="width: 100%; border: 0px solid">
+      <tr>
+        <td style="text-align: center">
+          <img src="logo_topo.png" />
+        </td>
+      </tr>
+    </table>
+
+    <div class="">
+      <table
+        style="
+          width: 100%;
+          border: 0px solid;
+          font-family: Arial;
+          font-size: 28px;
+        "
+      >
+        <tr>
+          <td style="text-align: center">Orçamento</td>
+          <br />
+        </tr>
+      </table>
+    </div>
+    <div class="">
+      <hr />
+    </div>
+    <div class="">
+      <table
+        style="
+          width: 100%;
+          border: 0px solid;
+          font-family: Arial;
+          font-size: 20px;
+          font-weitght: bold;
+        "
+      >
+        <tr>
+          <td style="text-align: left">Cliente: VENDA A CONSUMIDOR</td>
+          <td style="text-align: left">Data: 20/09/2024 09:27:00 Validade: 30 dias</td>
+        </tr>
+      </table>
+    </div>
+    <div class="">
+      <hr />
+    </div>
+    <div class="">
+      <table
+        style="
+          width: 100%;
+          border: 1px solid;
+          font-family: Arial;
+          font-size: 18px;
+          border-collapse: collapse;
+        "
+      >
+        <tr>
+          <td class="cabecalho_coluna">Qtde:</td>
+          <td class="cabecalho_coluna">Produto:</td>
+          <td class="cabecalho_coluna">Detalhamento:</td>
+          <td class="cabecalho_coluna">Cor:</td>
+          <td class="cabecalho_coluna">Silk:</td>
+          <td class="cabecalho_coluna">Bordado:</td>
+          <td class="cabecalho_coluna">Vlr Unitário:</td>
+          <td class="cabecalho_coluna">Total:</td>
+        </tr>
+        <tr><td>1300</td><td>BABYLOOK  GOLA REDONDA RIBANA EM PV FIO 30</td><td></td><td>VERMELHA</td><td>xxxx</td><td>BORDADO1</td><td>12,00</td><td>15.600,00</td></tr><tr><td>2600</td><td>BABYLOOK GOLA REDONDA VIES EM FIO 30</td><td>AS CAMISAS SERÃO DE ALGODÃO 100%
+GOLAS COM LISTRAS BLA BLA BLA</td><td>VERMELHA</td><td>xxxx</td><td>BORDADO1</td><td>10,00</td><td>26.000,00</td></tr>
+      </table>
+    </div>
+    <div class="">
+      <table
+        style="
+          width: 100%;
+          border: 1px solid;
+          font-family: Arial;
+          font-size: 18px;
+          background-color: #f2f2f2;
+        "
+      >
+        <tr>
+          <td style="text-align:center;  1px solid">
+            <p style="text-align: center">Condições de Pagamento</p>
+            <p style="text-align: center">
+              50% na Entrada do Pedido + 50% na entrega do pedido
+            </p>
+          </td>
+          <td style="text-align: center">
+            <p style="text-align: center">Total:</p>
+            <p style="text-align: center">41.600,00</p>
+          </td>
+          <td style="text-align: center">
+            <p style="text-align: center">Desconto:</p>
+            <p style="text-align: center">0,00</p>
+          </td>
+          <td style="text-align: center">
+            <p style="text-align: center; font-weight: bold">Valor Final:</p>
+            <p style="text-align: center; font-weight: bold">R$ 41.600,00</p>
+          </td>
+          <hr />
+          <hr />
+        </tr>
+      </table>
+    </div>
+    <div class="footer-table">
+      <table
+        style="
+          width: 100%;
+          border: 1px solid;
+          font-family: Arial;
+          font-size: 14px;
+        "
+      >
+        <tr>
+          <td style="text-align: left">JUNDIAI CASA LTDA - Anápolis/GO CNPJ: 37871281000168</td>
+          <td style="text-align: right">20/09/2024 09:27:00_hora</td>
+          <hr />
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,285 @@
+05-03-25
+
+ALTER TABLE requinte.`tab_itdoc`
+	ADD COLUMN `atualizacao_itd` DATETIME NULL;
+	
+ALTER TABLE requinte.tab_doc ADD id_doc_web INTEGER ;
+
+
+
+03-8-24
+ALTER TABLE tab_parametros ADD cod_emp CHAR(2) NOT NULL DEFAULT '02';
+ALTER TABLE tab_caixas ADD serie_nfe CHAR(4) ;
+
+
+alter table estoque
+add cfop_revenda char(4),
+add cfop_consumidor char(4),
+add cst_icms char(3),
+add cst_ipi char(2),
+add cst_pis char(2),
+add pcims double not null default 0,
+add predcims double not null default 0;
+
+
+alter table sped_empresa add cor char(20), add crt char(1) not null default 1;
+
+
+ALTER TABLE tab_vendas ADD tipo_operacao CHAR(1) NOT NULL DEFAULT 1;
+ALTER TABLE tab_produtos ADD cfop_revenda CHAR(5), add cst_revenda CHAR(5);
+CREATE TABLE nfe_item_comb(
+	id_item INTEGER NOT NULL,
+	id_nfe integer not null,
+	cProdANP varCHAR(9) NOT NULL,
+	descANP varCHAR(95) NOT NULL,
+	UFCons CHAR(2) NOT NULL,
+	PRIMARY KEY(id_item));
+
+
+CREATE TABLE produtos_comb(
+cod_pro CHAR(8) NOT NULL,
+cProdAnp varCHAR(9) NOT  NULL,
+descAnp varCHAR(95) NOT NULL,
+PRIMARY KEY(cod_pro));
+
+
+ALTER TABLE `nfe_pag`
+	ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT AFTER `vTroco`,
+	ADD PRIMARY KEY (`id`);
+
+alter table nfe_pag add id integer not null;
+17/12
+
+alter table sped_empresa add caminho_logo varchar(255);
+ALTER TABLE tab_categorias ADD atacado_cat INT NOT NULL DEFAULT 0;
+
+3/12
+
+alter table nfe_infaddpadrao ADD cod_emp CHAR(2) NOT NULL DEFAULT '01'
+
+ALTER TABLE `tab_consignacoes`
+	ADD COLUMN `id` BIGINT NOT NULL AUTO_INCREMENT FIRST,
+	DROP PRIMARY KEY,
+	ADD PRIMARY KEY (`id`);
+
+
+2811
+
+ALTER TABLE inventario ADD cod_emp CHAR(2) NOT NULL DEFAULT '01';
+ALTER TABLE inventario_it ADD cod_emp CHAR(2) NOT NULL DEFAULT '01';
+
+create table contratos(
+	id integer not null auto_increment,
+	doc char(12),
+	data datetime,
+	caminho text,
+	primary key(id));
+
+20092022
+ALTER TABLE sped_empresa ADD caminho_certificado VARCHAR(250),
+ADD senha_certificado varCHAR(50),
+ADD idcsc VARCHAR(10),
+ADD token varchar(50);
+
+03092022
+
+CREATE TABLE itvendas_confeccao(id INTEGER NOT NULL,
+	cor VARCHAR(50),
+	silk VARCHAR(50),
+	bordado VARCHAR(50),
+	descricao TEXT,
+	PRIMARY KEY(id))
+	ENGINE=myisam;
+alter table tab_defusu add desbloquearvenda_usu char(1) not null default 'N';
+
+CREATE TABLE `parametro_estrutura` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `regra` varchar(100) NOT NULL,
+  `valor` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=myisam CHARSET=latin1
+
+
+alter table contagem add cod_emp char(2) not null default '01';
+ALTER TABLE produtos ADD qconv INTEGER NOT NULL DEFAULT 1;
+alter table nfe add cod_emp char(2) not null default '01';
+alter table vendas add email_ven varchar(100);
+
+
+
+03/05/22
+ALTER TABLE `tab_vendas` ADD `valorentrega_ven` DOUBLE(14,2)  DEFAULT "0";
+ALTER TABLE tab_vendas ADD `enderecoentrega_ven` varchar(200);
+
+16/03
+ALTER TABLE tab_vendas ADD email_ven CHAR(255);
+ALTER TABLE tab_vendas add aniversario_ven CHAR(5);
+2110
+alter table vendas add horaefet_ven time null;
+
+
+`data_ven`;
+ALTER TABLE nfe_pag ADD id INT(11) AUTO_INCREMENT PRIMARY key;
+ALTER TABLE tab_formaspag ADD visivel_for CHAR(1) DEFAULT 'S';
+DROP TABLE if EXISTS tab_clientesanot;
+
+CREATE TABLE tab_clientesanot(
+	id INTEGER NOT NULL auto_increment,
+	cod_cli INT(6) ZEROFILL,
+	anotacao TEXT,
+	datahora datetime,
+	cod_usu char(3),
+	excluido char(1) default 'N',
+	PRIMARY KEY(id));
+alter table tab_usuarios add corfundo_usu char(20) ;
+ALTER TABLE tab_parametros ADD usaconsignado CHAR(1) DEFAULT 'N';
+ALTER TABLE tab_parametros ADD usavendaseparadocaixa CHAR(1) DEFAULT 'N';
+ALTER TABLE tab_parametros ADD usatransferencia CHAR(1) DEFAULT 'N';
+ALTER TABLE tab_parametros ADD usacobranca CHAR(1) DEFAULT 'N';
+ALTER TABLE tab_parametros ADD usacrediario CHAR(1) DEFAULT 'N';
+
+19/07
+
+
+INSERT INTO `tab_formaspag` (`cod_for`, `nome_for`, `desconto_for`, `tipo_cai`, `avista_for`) VALUES ('22', 'DEPÓSITO', '5', 'DEP', 'S');
+
+INSERT INTO `tab_formaspag` (`cod_for`, `nome_for`, `desconto_for`, `tipo_cai`, `avista_for`) VALUES ('23', 'PIX', '5', 'PIX', 'S');
+
+08/04
+ALTER TABLE nfe ADD indIntermed INT NOT NULL DEFAULT 0;
+
+
+
+--18/01/21
+ALTER TABLE tab_produtos ADD cod_gen CHAR(2);
+ALTER TABLE `tab_parametros`
+	ADD COLUMN `crt` CHAR(1) NULL DEFAULT '1' AFTER `infaddnfe55`;
+
+
+
+--01/01
+INSERT INTO tab_espcai (`sigla_cai`, `descricao_cai`, `efetivo`) VALUES ('RDC', 'RECEBIMENTO EM DINHEIRO NO CAIXA', 'S');
+alter table tab_produtos add cod_mar char(3);
+alter table tab_produtos add cod_cat char(3);
+
+ALTER TABLE sped_nf ADD cod_usu CHAR(3);
+CREATE TABLE tab_marcas(
+	cod_mar CHAR(3) NOT NULL,
+	nome_mar CHAR(50),
+	PRIMARY KEY(cod_mar)) engine=myisam;
+CREATE TABLE tab_cat(
+	cod_cat CHAR(3) NOT NULL,
+	nome_cat CHAR(50),
+	PRIMARY KEY(cod_cat)) engine=myisam;
+
+
+CREATE TABLE tab_categorias(
+	cod_cat CHAR(3) NOT NULL,
+	nome_cat CHAR(50),
+	PRIMARY KEY(cod_cat)) engine=myisam;
+
+--28/12
+ALTER table requintejun.sped_participante ADD UF CHAR(2);
+ALTER TABLE tab_produtos ADD codbarra_pro varCHAR(20);
+ALTER TABLE tab_produtos ADD codfab_pro varCHAR(20);
+ 
+
+24/12
+
+CREATE table sendmail(
+	id INT NOT NULL AUTO_INCREMENT,
+	nome TEXT,
+	email CHAR(100) NOT NULL,
+	sch TEXT,
+	sendusing CHAR(1),
+	smtpserver varCHAR(255),
+	smtpserverport INTEGER,
+	smtpauthenticate CHAR(1),
+	sendusername TEXT,
+	sendpassword TEXT,
+	smtpusessl CHAR(1),
+	subject TEXT,
+	body TEXT,
+	PRIMARY KEY(id))
+	ENGINE myISAM;
+22/12/20
+CREATE TABLE if not exists nfe_tpag(
+	tpag CHAR(2) NOT NULL,
+	nome CHAR(60),
+	PRIMARY KEY(tpag));
+	
+	replace INTO nfe_tpag values
+	('01','Dinheiro');
+replace INTO nfe_tpag values
+('02','Cheque');
+replace INTO nfe_tpag values
+('03','Cartão de Crédito');
+replace INTO nfe_tpag values
+
+('04','Cartão de Débito');
+replace INTO nfe_tpag values
+('05','Crédito Loja');
+replace INTO nfe_tpag values
+('10','Vale Alimentação');
+replace INTO nfe_tpag values
+('11','Vale Refeição');
+replace INTO nfe_tpag values
+('12','Vale Presente');
+replace INTO nfe_tpag values
+('13','Vale Combustível');
+replace INTO nfe_tpag values
+('14','Duplicata Mercantil');
+replace INTO nfe_tpag values
+('15','Boleto Bancário');
+replace INTO nfe_tpag values
+('90','Sem Pagamento');
+replace INTO nfe_tpag values
+('99','Outros');
+
+alter table tab_produtos add dataalt_pro date;
+ALTER TABLE tab_espcai ADD efetivo CHAR(1) NOT NULL DEFAULT 'N';
+
+CREATE TABLE fecha_caixa(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	DATA DATE NOT NULL,
+	caixa CHAR(2) NOT NULL,
+	dinheiro_total DOUBLE(14,2) DEFAULT 0,
+	dinheiro_info DOUBLE(14,2) DEFAULT 0,
+	cheque_total DOUBLE(14,2) DEFAULT 0,
+	cheque_info DOUBLE(14,2) DEFAULT 0,
+	cartao_total DOUBLE(14,2) DEFAULT 0,
+	cartao_info DOUBLE(14,2) DEFAULT 0,
+	quem_fechou char(3),
+	quando datetime,
+	obs TEXT,
+	PRIMARY KEY(id));
+
+
+--20/11/20
+alter table vales add num_ven char(8);
+
+
+--24/10/2020
+--adicionar hora à tab_caixa
+
+ALTER TABLE tab_caixa ADD hora_cai datetime;
+ALTER TABLE tab_caixa ADD saida_cai DOUBLE(14,2) default 0;
+
+UPDATE tab_caixa SET entrada_cai=valor_cai WHERE tipo_cai='C';
+UPDATE tab_caixa SET saida_cai=valor_cai WHERE tipo_cai='D';
+
+REPLACE INTO tab_espcai (sigla_cai, descricao_cai) VALUES ('CAN', 'CANCELAMENTO DE BAIXA')
+REPLACE INTO tab_espcai (sigla_cai, descricao_cai) VALUES ('DEP', 'DEPÓSITO BANCÁRIO')
+REPLACE INTO tab_espcai (sigla_cai, descricao_cai) VALUES ('VAL', 'VALE DE FUNCIONÁRIOS (EM VENDA)')
+
+CREATE TABLE CentroCusto(
+	id INTEGER NOT NULL auto_increment,
+	codigo CHAR(10) NOT NULL,
+	tipo ENUM('C','D') NOT NULL DEFAULT 'C',
+	nome CHAR(100),
+	pai INT,
+	PRIMARY KEY(id));
+
+
+
+ALTER TABLE requinte.sped_empresa ADD caminho_qrdcodedoc VARCHAR(250);

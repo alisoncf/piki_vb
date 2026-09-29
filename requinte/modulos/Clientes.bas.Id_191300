@@ -1,0 +1,483 @@
+Attribute VB_Name = "Clientes"
+Dim Tel() As Telefone
+Type Telefone
+    num_tel As String
+    tipo_tel As String
+    cod_cli As String
+End Type
+
+Type Cliente
+    cod_cli As String
+    nome_Cli As String
+    endereco_cli As String
+    nasc_cli As String
+    cnpj_Cli As String
+    ie_Cli As String
+    telefone_cli As String
+    limite_cli As Currency
+    uf_cli As String
+    bairro_cli As String
+    cidade_cli As String
+    cep_cli As String
+    t() As Telefone
+    credito_cli As Currency
+    status_cli As String
+    cod_gru As String
+    nome_gru As String
+    set As setor
+    localtrab_cli As String
+    endtrab_cli As String
+    setortrab As setor
+    teltrab_cli As String
+    ceptrab_cli As String
+    datanasc_cli As String
+    
+End Type
+
+Type grupoCli
+    cod_gru As String
+    nome_gru As String
+End Type
+
+Function F_BuscaCliente(busca As String) As Cliente
+    On Error Resume Next
+    Dim sTel As String
+    frmSelectCli.txtbxNome.tag = "C"
+    frmSelectCli.txtbxNome.Text = busca
+    
+    Dim rPesq As Recordset
+    Dim strSQL As String
+    frmSelectCli.Show 1
+    If frmSelectCli.tag <> "" Then
+        F_BuscaCliente.cod_cli = frmSelectCli.dtBusca.Recordset!cod_cli
+        F_BuscaCliente.nasc_cli = frmSelectCli.dtBusca.Recordset!nasc_cli
+        F_BuscaCliente.status_cli = frmSelectCli.dtBusca.Recordset!status_cli
+        F_BuscaCliente.nome_Cli = frmSelectCli.dtBusca.Recordset!nome_Cli
+        F_BuscaCliente.credito_cli = frmSelectCli.dtBusca.Recordset!credito_cli
+        F_BuscaCliente.endereco_cli = frmSelectCli.dtBusca.Recordset!endereco_cli
+        F_BuscaCliente.ie_Cli = frmSelectCli.dtBusca.Recordset!rg_cli
+        F_BuscaCliente.cnpj_Cli = frmSelectCli.dtBusca.Recordset!cpf_cli
+        F_BuscaCliente.limite_cli = frmSelectCli.dtBusca.Recordset!limite_cli
+        F_BuscaCliente.bairro_cli = frmSelectCli.dtBusca.Recordset!bairro_cli
+        F_BuscaCliente.cidade_cli = frmSelectCli.dtBusca.Recordset!cidade_cli
+        F_BuscaCliente.cep_cli = frmSelectCli.dtBusca.Recordset!cep_cli
+        F_BuscaCliente.uf_cli = frmSelectCli.dtBusca.Recordset!uf_cli
+        F_BuscaCliente.set.Cidade = frmSelectCli.dtBusca.Recordset!nome_cid
+        F_BuscaCliente.set.cobrador_set = frmSelectCli.dtBusca.Recordset!cobrador_set
+        F_BuscaCliente.set.cod = frmSelectCli.dtBusca.Recordset!cod_set
+        F_BuscaCliente.set.Nome = frmSelectCli.dtBusca.Recordset!nome_set
+        F_BuscaCliente.set.tipo = frmSelectCli.dtBusca.Recordset!tipo_set
+        F_BuscaCliente.set.uf = frmSelectCli.dtBusca.Recordset!uf_cid
+        
+        strSQL = "select * from tab_telefones where cod_cli='" & frmSelectCli.dtBusca.Recordset!cod_cli & "' and tipo_ter='C'"
+        Set rPesq = Banco.OpenRecordset(strSQL, dbOpenSnapshot)
+        With rPesq
+            ReDim F_BuscaCliente.t(.RecordCount) As Telefone
+            Do While Not .EOF
+                
+                F_BuscaCliente.t(.AbsolutePosition).cod_cli = !cod_cli
+                F_BuscaCliente.t(.AbsolutePosition).num_tel = !num_tel
+                F_BuscaCliente.t(.AbsolutePosition).tipo_tel = !tipo_tel
+                
+                sTel = sTel & !num_tel
+                
+                .MoveNext
+                If Not .EOF Then
+                    sTel = sTel & "/"
+                End If
+            Loop
+        End With
+        F_BuscaCliente.telefone_cli = sTel
+        
+    End If
+    Unload frmSelectCli
+End Function
+Public Function F_BuscaClienteCodigo(cod_cli As String) As Cliente
+    On Error Resume Next
+    Dim sTel As String
+    Dim strSQL As String
+    Dim rPesq As Recordset
+    
+    
+    
+    strSQL = "select tc.*,cod_cli as cod, nome_cid,datanasc_cli,uf_cid,ts.cod_cid,cobrador_set,ts.nome_set,limite_cli,nome_cli as nome,cpf_cli as cnpj,endereco_cli as endereco,  "
+                strSQL = strSQL & "cpf_cli as cpf from tab_clientes as tc,tab_setores as ts, "
+                strSQL = strSQL & " tab_cidades as ti "
+                strSQL = strSQL & " where tc.cod_set=ts.cod_set and ti.cod_cid=ts.cod_cid"
+                strSQL = strSQL & " and cod_cli='" & cod_cli & "' "
+            
+            
+    Set rPesq = Banco.OpenRecordset(strSQL, dbOpenSnapshot)
+    
+    
+    
+    
+    
+    If rPesq.RecordCount > 0 Then
+        F_BuscaClienteCodigo.cod_cli = rPesq!cod_cli
+        F_BuscaClienteCodigo.datanasc_cli = rPesq!datanasc_cli
+        F_BuscaClienteCodigo.status_cli = rPesq!status_cli
+        F_BuscaClienteCodigo.nome_Cli = rPesq!nome_Cli
+        F_BuscaClienteCodigo.credito_cli = rPesq!credito_cli
+        F_BuscaClienteCodigo.endereco_cli = rPesq!endereco_cli
+        F_BuscaClienteCodigo.ie_Cli = rPesq!rg_cli
+        F_BuscaClienteCodigo.cnpj_Cli = rPesq!cpf_cli
+        F_BuscaClienteCodigo.limite_cli = rPesq!limite_cli
+        F_BuscaClienteCodigo.bairro_cli = rPesq!bairro_cli
+        F_BuscaClienteCodigo.cidade_cli = rPesq!cidade_cli
+        F_BuscaClienteCodigo.cep_cli = rPesq!cep_cli
+        F_BuscaClienteCodigo.uf_cli = rPesq!uf_cli
+        F_BuscaClienteCodigo.set.Cidade = rPesq!nome_cid
+        F_BuscaClienteCodigo.set.cobrador_set = rPesq!cobrador_set
+        F_BuscaClienteCodigo.set.cod = rPesq!cod_set
+        F_BuscaClienteCodigo.set.Nome = rPesq!nome_set
+        F_BuscaClienteCodigo.set.tipo = rPesq!tipo_set
+        F_BuscaClienteCodigo.set.uf = rPesq!uf_cid
+        
+        strSQL = "select * from tab_telefones where cod_cli='" & rPesq!cod_cli & "' and tipo_ter='C'"
+        Set rPesq = Banco.OpenRecordset(strSQL, dbOpenSnapshot)
+        With rPesq
+            ReDim F_BuscaClienteCodigo.t(.RecordCount) As Telefone
+            Do While Not .EOF
+                
+                F_BuscaClienteCodigo.t(.AbsolutePosition).cod_cli = !cod_cli
+                F_BuscaClienteCodigo.t(.AbsolutePosition).num_tel = !num_tel
+                F_BuscaClienteCodigo.t(.AbsolutePosition).tipo_tel = !tipo_tel
+                
+                sTel = sTel & !num_tel
+                
+                .MoveNext
+                If Not .EOF Then
+                    sTel = sTel & "/"
+                End If
+            Loop
+            .Close
+        End With
+        F_BuscaClienteCodigo.telefone_cli = sTel
+        
+    End If
+    
+End Function
+
+
+Function F_GravaCli(nome_Cli As String, datanasc_cli As String, cpf_cli As String, rg_cli As String, _
+    endereco_cli As String, bairro_cli As String, cidade_cli As String, uf_cli As String, cep_cli As String, _
+    obs_cli As String, mae_cli As String, pai_cli As String, mens_cli As String, limite_cli As String, _
+    cod_set As String, localtrab_cli As String, endtrab_cli As String, _
+    setortrab_cli As String, teltrab_cli As String, ceptrab_cli As String, cod_gru As String, cobranca_cli As String, cod_org As String) As String
+    Dim strSQL As String
+    
+    Dim sCod As String
+    sCod = MaxKeySQL("tab_clientes", "cod_cli", "", "0000#")
+    
+    
+    strSQL = "insert into tab_clientes(cod_cli,nome_cli,datanasc_cli,cpf_cli,rg_cli,"
+    strSQL = strSQL & "endereco_Cli,bairro_cli,cidade_Cli,"
+    strSQL = strSQL & "uf_cli,cep_cli,"
+    strSQL = strSQL & "data_cli,obs_cli,mae_cli,pai_cli,mens_cli,limite_cli,"
+    strSQL = strSQL & "status_cli,cod_set,"
+    strSQL = strSQL & "localtrab_cli,endtrab_cli,setortrab_cli,teltrab_cli,ceptrab_cli,cobranca_cli,cod_gru,cod_org) values("
+    strSQL = strSQL & "'" & sCod & "',"
+    strSQL = strSQL & "'" & nome_Cli & "',"
+    strSQL = strSQL & F_GravaData(datanasc_cli) & ","
+    strSQL = strSQL & "'" & cpf_cli & "',"
+    strSQL = strSQL & "'" & rg_cli & "',"
+    strSQL = strSQL & "'" & endereco_cli & "',"
+    strSQL = strSQL & "'" & bairro_cli & "',"
+    strSQL = strSQL & "'" & cidade_cli & "',"
+    strSQL = strSQL & "'" & uf_cli & "',"
+    strSQL = strSQL & "'" & cep_cli & "',"
+    
+    
+    
+    strSQL = strSQL & F_GravaData(Date) & ","
+    strSQL = strSQL & "'" & obs_cli & "',"
+    strSQL = strSQL & "'" & mae_cli & "',"
+    strSQL = strSQL & "'" & pai_cli & "',"
+    
+    strSQL = strSQL & "'" & mens_cli & "',"
+    
+    strSQL = strSQL & F_GravaDec(limite_cli) & ","
+    strSQL = strSQL & "'1',"
+    strSQL = strSQL & "'" & cod_set & "',"
+    strSQL = strSQL & "'" & localtrab_cli & "',"
+    strSQL = strSQL & "'" & endtrab_cli & "',"
+    strSQL = strSQL & "'" & setortrab_cli & "',"
+    strSQL = strSQL & "'" & teltrab_cli & "',"
+    strSQL = strSQL & "'" & ceptrab_cli & "',"
+    strSQL = strSQL & "'" & cobranca_cli & "',"
+    strSQL = strSQL & "'" & cod_gru & "',"
+    strSQL = strSQL & "'" & cod_org & "')"
+    Banco.Execute strSQL
+    F_GravaCli = sCod
+    
+End Function
+Function F_MigraCli(cod_cli As String, nome_Cli As String, datanasc_cli As String, cpf_cli As String, rg_cli As String, _
+    endereco_cli As String, bairro_cli As String, cidade_cli As String, uf_cli As String, cep_cli As String, _
+    obs_cli As String, mae_cli As String, pai_cli As String, mens_cli As String, limite_cli As String, _
+    cod_set As String, localtrab_cli As String, endtrab_cli As String, _
+    setortrab_cli As String, teltrab_cli As String, ceptrab_cli As String) As String
+    Dim strSQL As String
+    
+    Dim sCod As String
+    sCod = cod_cli
+    
+    
+    strSQL = "insert into tab_clientes(cod_cli,nome_cli,datanasc_cli,cpf_cli,rg_cli,"
+    strSQL = strSQL & "endereco_Cli,bairro_cli,cidade_Cli,"
+    strSQL = strSQL & "uf_cli,cep_cli,"
+    strSQL = strSQL & "data_cli,obs_cli,mae_cli,pai_cli,mens_cli,limite_cli,"
+    strSQL = strSQL & "status_cli,cod_set,"
+    strSQL = strSQL & "localtrab_cli,endtrab_cli,setortrab_cli,teltrab_cli,ceptrab_cli) values("
+    strSQL = strSQL & "'" & sCod & "',"
+    strSQL = strSQL & "'" & nome_Cli & "',"
+    strSQL = strSQL & F_GravaData(datanasc_cli) & ","
+    strSQL = strSQL & "'" & cpf_cli & "',"
+    strSQL = strSQL & "'" & rg_cli & "',"
+    strSQL = strSQL & "'" & endereco_cli & "',"
+    strSQL = strSQL & "'" & bairro_cli & "',"
+    strSQL = strSQL & "'" & cidade_cli & "',"
+    strSQL = strSQL & "'" & uf_cli & "',"
+    strSQL = strSQL & "'" & cep_cli & "',"
+    
+    
+    
+    strSQL = strSQL & F_GravaData(Date) & ","
+    strSQL = strSQL & "'" & obs_cli & "',"
+    strSQL = strSQL & "'" & mae_cli & "',"
+    strSQL = strSQL & "'" & pai_cli & "',"
+    
+    strSQL = strSQL & "'" & mens_cli & "',"
+    
+    strSQL = strSQL & F_GravaDec(limite_cli) & ","
+    strSQL = strSQL & "'1',"
+    strSQL = strSQL & "'" & cod_set & "',"
+    strSQL = strSQL & "'" & localtrab_cli & "',"
+    strSQL = strSQL & "'" & endtrab_cli & "',"
+    strSQL = strSQL & "'" & setortrab_cli & "',"
+    strSQL = strSQL & "'" & teltrab_cli & "',"
+    strSQL = strSQL & "'" & ceptrab_cli & "')"
+    On Error Resume Next
+    Banco.Execute strSQL
+    F_MigraCli = sCod
+    
+End Function
+
+Function F_AlteraCli(cod_cli, nome_Cli As String, datanasc_cli As String, cpf_cli As String, rg_cli As String, _
+    endereco_cli As String, bairro_cli As String, cidade_cli As String, uf_cli As String, cep_cli As String, _
+    obs_cli As String, mae_cli As String, pai_cli As String, mens_cli As String, _
+    limite_cli As String, status_cli As String, cod_set As String, localtrab_cli As String, endtrab_cli As String, _
+    setortrab_cli As String, teltrab_cli As String, ceptrab_cli As String, cod_gru As String, cobranca_cli As String, cod_org As String) As Boolean
+    Dim strSQL As String
+    
+    
+    
+    On Error GoTo trata_erro
+    
+    strSQL = "update tab_clientes set "
+    strSQL = strSQL & "nome_cli='" & nome_Cli & "',"
+    strSQL = strSQL & "datanasc_cli=" & F_GravaData(datanasc_cli) & ","
+    strSQL = strSQL & "cpf_cli='" & cpf_cli & "',"
+    strSQL = strSQL & "rg_cli='" & rg_cli & "',"
+    strSQL = strSQL & "endereco_cli='" & endereco_cli & "',"
+    strSQL = strSQL & "bairro_cli='" & bairro_cli & "',"
+    strSQL = strSQL & "cidade_cli='" & cidade_cli & "',"
+    strSQL = strSQL & "uf_cli='" & uf_cli & "',"
+    strSQL = strSQL & "cep_cli='" & cep_cli & "',"
+    strSQL = strSQL & "cod_set='" & cod_set & "',"
+    
+    strSQL = strSQL & "cod_gru='" & cod_gru & "',"
+    
+    strSQL = strSQL & "obs_cli='" & obs_cli & "',"
+    strSQL = strSQL & "mae_cli='" & mae_cli & "',"
+    strSQL = strSQL & "pai_cli='" & pai_cli & "',"
+    
+    strSQL = strSQL & "mens_cli='" & mens_cli & "',"
+    
+    strSQL = strSQL & "limite_cli=" & F_GravaDec(limite_cli) & ","
+    strSQL = strSQL & "status_cli='" & status_cli & "', "
+    strSQL = strSQL & "localtrab_cli='" & localtrab_cli & "',"
+    strSQL = strSQL & "endtrab_cli='" & endtrab_cli & "',"
+    strSQL = strSQL & "setortrab_cli='" & setortrab_cli & "',"
+    strSQL = strSQL & "teltrab_cli='" & teltrab_cli & "',"
+    strSQL = strSQL & "cobranca_cli='" & cobranca_cli & "',"
+    strSQL = strSQL & "cod_org='" & cod_org & "',"
+    strSQL = strSQL & "ceptrab_cli='" & ceptrab_cli & "' "
+    
+    strSQL = strSQL & " where cod_cli='" & cod_cli & "'"
+    Banco.Execute strSQL
+    F_AlteraCli = True
+    Exit Function
+trata_erro:
+    F_AlteraCli = False
+End Function
+
+
+Function F_GravaTelefone(cod_cli As String, num_tel As String, tipo_tel As String, Optional tipo_ter As String = "C") As Boolean
+    Dim strSQL As String
+    On Error GoTo trata_erro
+    F_GravaTelefone = False
+    strSQL = "insert into tab_telefones(cod_cli,num_tel,tipo_tel,tipo_ter)values("
+    strSQL = strSQL & "'" & cod_cli & "',"
+    strSQL = strSQL & "'" & num_tel & "',"
+    strSQL = strSQL & "'" & tipo_tel & "',"
+    strSQL = strSQL & "'" & tipo_ter & "')"
+    Banco.Execute strSQL
+    F_GravaTelefone = True
+    
+    Exit Function
+trata_erro:
+    F_GravaTelefone = False
+End Function
+Function F_GravaAutorizados(cod_cli As String, nome_aut As String, cod_tip As String) As String
+    Dim strSQL As String
+    Dim sCod As String
+    On Error GoTo trata_erro
+    sCod = MaxKeySQL("tab_autorizados", "seq_aut", "cod_cli='" & cod_cli & "'", "")
+    
+            strSQL = "insert into tab_autorizados(cod_cli,seq_aut,nome_aut,cod_tip)values("
+            strSQL = strSQL & "'" & cod_cli & "',"
+            strSQL = strSQL & sCod & ","
+            
+            strSQL = strSQL & "'" & nome_aut & "',"
+            
+            
+            strSQL = strSQL & "'" & cod_tip & "')"
+            Banco.Execute strSQL
+    F_GravaAutorizados = sCod
+    
+    Exit Function
+trata_erro:
+    F_GravaAutorizados = ""
+End Function
+
+
+Function F_BuscaTel(cod_cli As String, tipo_ter As String) As String
+    Dim strSQL As String
+    Dim rPesq As Recordset
+    On Error GoTo trata_erro
+    strSQL = "select * from tab_telefones where cod_cli='" & cod_cli & "' and tipo_ter='" & tipo_ter & "'"
+    Set rPesq = Banco.OpenRecordset(strSQL, dbOpenSnapshot)
+    With rPesq
+        Do While Not .EOF
+            F_BuscaTel = F_BuscaTel + !num_tel
+            .MoveNext
+            If Not .EOF Then
+                F_BuscaTel = F_BuscaTel & " / "
+            End If
+        Loop
+        .Close
+    End With
+    Exit Function
+trata_erro:
+    
+End Function
+
+Function F_BuscaLimiteEmUsoCli(cod_cli As String) As Currency
+    Dim strSQL As String
+    Dim rPesq As Recordset
+    strSQL = "select sum(ti.reman_itd) as total from tab_itdoc as ti, tab_doc as td "
+    strSQL = strSQL & " where td.seq_doc=ti.seq_doc and td.cod_ter='" & cod_cli & "' "
+    strSQL = strSQL & " and td.tipo_doc='R'"
+    Set rPesq = Banco.OpenRecordset(strSQL, dbOpenSnapshot)
+    With rPesq
+        If .RecordCount > 0 Then
+            If IsNull(!total) Then
+                F_BuscaLimiteEmUsoCli = 0
+            Else
+            
+                F_BuscaLimiteEmUsoCli = !total
+            End If
+        Else
+            F_BuscaLimiteEmUsoCli = 0
+        End If
+        .Close
+    End With
+End Function
+Function F_BuscaLimiteEmUsoRep(cod_rep As String) As Currency
+    Dim strSQL As String
+    Dim rPesq As Recordset
+    strSQL = "select sum(reman_con*unit_con) as total from tab_consignacoes  "
+    strSQL = strSQL & " where cod_rep='" & cod_rep & "'    "
+    Set rPesq = Banco.OpenRecordset(strSQL, dbOpenSnapshot)
+    With rPesq
+        If .RecordCount > 0 Then
+            If IsNull(!total) Then
+                F_BuscaLimiteEmUsoRep = 0
+            Else
+            
+                F_BuscaLimiteEmUsoRep = !total
+            End If
+        Else
+            F_BuscaLimiteEmUsoRep = 0
+        End If
+        .Close
+    End With
+End Function
+
+
+Function F_BuscaGrupoCli() As grupoCli
+    Dim strSQL As String
+    On Error GoTo trata_erro
+    strSQL = "select cod_gru as cod,nome_gru as nome from tab_grupocli "
+    
+    
+    
+    frmSelect.sSelect = strSQL
+    
+    Set frmSelect.cCriterio = Nothing
+    frmSelect.cCriterio.Add "where cod_gru>-1  "
+    frmSelect.sOrd = " order by nome_gru"
+    frmSelect.Show 1
+    
+    If frmSelect.tag <> "" Then
+        frmSelect.msflxgrd.Col = 0
+        F_BuscaGrupoCli.cod_gru = frmSelect.msflxgrd.Text
+        frmSelect.msflxgrd.Col = 1
+        F_BuscaGrupoCli.nome_gru = frmSelect.msflxgrd.Text
+    End If
+    Unload frmSelect
+Exit Function
+trata_erro:
+    P_MostraErro
+End Function
+Function F_SelectItensCompradosVendas(cod_cli As String, Optional dataI As String = "", _
+    Optional dataF As String = "") As String
+    Dim strSQL As String
+    strSQL = "select tfo.nome_for,tc.nome_cli, ti.*,tv.num_ven,tv.data_ven,"
+    strSQL = strSQL & "tv.valor_ven,desconto_ven, tf.guerra_fun "
+    strSQL = strSQL & " from tab_clientes as tc,"
+    strSQL = strSQL & " tab_vendas as tv, tab_funcionarios as tf,tab_formaspag as tfo,  "
+    strSQL = strSQL & " tab_itvendas as ti "
+    strSQL = strSQL & " where tf.cod_fun=tv.abrevenda_usu "
+    strSQL = strSQL & " and ti.num_ven=tv.num_ven "
+    strSQL = strSQL & " and tfo.cod_for=tv.cod_for "
+    
+    strSQL = strSQL & " and situacao_ven=4 "
+    
+    strSQL = strSQL & " and tc.cod_cli=tv.cod_cli "
+    If abreVendaUsu <> "" Then
+        strSQL = strSQL & " and abrevenda_usu='" & abreVendaUsu & "' "
+    End If
+    
+    If cod_cli <> "" Then
+        strSQL = strSQL & " and tv.cod_cli='" & cod_cli & "' "
+    End If
+    
+    If dataI <> "" Then
+        strSQL = strSQL & " and data_ven >=" & F_GravaDataTempo(dataI)
+    End If
+    If dataF <> "" Then
+        strSQL = strSQL & " and data_ven <=" & F_GravaDataTempo(dataF & " 23:59:59")
+    End If
+    F_SelectItensCompradosVendas = strSQL
+End Function
+Sub P_ResumoDeb(cod As String, Optional tipo_ter As String = "C")
+    P_LocalizaOperacao tipo_ter, frmResumoDeb.cmbxTipoTer
+    
+    frmResumoDeb.tag = cod
+    frmResumoDeb.txtbxTerceiro.Text = cod
+    frmResumoDeb.txtbxTerceiro.tag = cod
+    frmResumoDeb.Show 1
+    
+End Sub

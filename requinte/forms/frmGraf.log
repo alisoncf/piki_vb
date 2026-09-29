@@ -1,0 +1,18 @@
+Line 2: Could not create reference: '{70383A57-8640-4150-AB17-F7D6588F8CF9}#4.0#0'.
+Line 95: Class ChartfxLibCtl.ChartFX of control ChrtFX was not a loaded control class.
+Line 101: The property name _cx in ChrtFX is invalid.
+Line 102: The property name _cy in ChrtFX is invalid.
+Line 103: The property name Build in ChrtFX is invalid.
+Line 104: The property name TypeMask in ChrtFX is invalid.
+Line 105: The property name LeftGap in ChrtFX is invalid.
+Line 106: The property name RightGap in ChrtFX is invalid.
+Line 107: The property name TopGap in ChrtFX is invalid.
+Line 108: The property name BottomGap in ChrtFX is invalid.
+Line 109: The property name DblClk in ChrtFX is invalid.
+Line 110: The property name RigClk in ChrtFX is invalid.
+Line 111: The property name Volume in ChrtFX is invalid.
+Line 112: The property name Axis(0).Decimals in ChrtFX is invalid.
+Line 113: The property name Axis(0).TickMark in ChrtFX is invalid.
+Line 114: The property name Axis(2).Min in ChrtFX is invalid.
+Line 115: The property name Axis(2).Max in ChrtFX is invalid.
+Line 116: The property name RGBBk in ChrtFX is invalid.

@@ -1,0 +1,2 @@
+﻿[{"id_pro":"1200","nome_pro":"EDREDON MANTA QUEEN DUPLA FACE ATTUALE FATEX\/CORTTEX","cod_sub":"40","localizacao_pro":"UN","margem_lucro":"0.30","unidade_pro":"UN","quantidade_embalagem":"1","ncm_pro":"94049000","cod_fabrica":"127","gtin_pro":"SEM GTIN","codbarra_interno_pro":"0","fracionado_pro":false,"pv_pro":"138,00","pq_pro":"0,00","cr_pro":"64,16","cf_pro":"68,31","cod_pro":"00001200","cod_sec":"1","cod_emp":"1"}]
+id_pro=1200

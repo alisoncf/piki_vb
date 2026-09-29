@@ -1,0 +1,24 @@
+ALTER TABLE `tab_procomp` ADD `cod_for` CHAR(5)  NOT NULL;
+ALTER TABLE `tab_itenspcp` ADD `total_ipc` DECIMAL(14,2)  DEFAULT "0" NOT NULL;
+ALTER TABLE `tab_itenspcp` ADD `cod_for` CHAR(5)  NOT NULL;
+
+create table tab_movint(
+	Num_mov char(7) not null,
+	tipo_mov char(1) not null,
+	desc_mov char(40) not null,
+	valor_mov decimal(14,2) not null,
+	data_mov date not null,
+	situacao_mov char(1) not null default 1,
+	cod_usu char(3) not null,
+	dataefet_mov date not null,
+	primary key(num_mov)
+);
+create table tab_itmov(
+	Num_mov char(7) not null,
+	cod_pro char(8) not null,
+	qtd_ite decimal(14,2) not null,
+	custo_ite decimal(14,2) not null,
+	unit_ite decimal(14,2) not null,	
+	seq_ite integer not null,
+	primary key(num_mov,cod_pro)	
+);

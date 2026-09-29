@@ -1,0 +1,2 @@
+Object={8E515444-86DF-11D3-A630-444553540001}#1.0#0; barcodex.ocx
+!Object={8E515444-86DF-11D3-A630-444553540001}#1.0#0; barcodex.ocx!

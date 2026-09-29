@@ -1,0 +1,27 @@
+campos/tabelas  a serem criados
+
+copiar as tabelas enviadas, e executar as seguintes linhas
+
+
+
+ALTER TABLE `tab_caixas` ADD `cod_tur` CHAR(1)  DEFAULT "1" NOT NULL
+
+ALTER TABLE `tab_caixa` CHANGE `turno_cai` `cod_tur` CHAR(1)  DEFAULT "1" NOT NULL
+ALTER TABLE `tab_venfec` ADD `cod_tur` CHAR(1)  DEFAULT "1" NOT NULL
+
+create table tab_embalagens(
+	cod_pro char(8) not null,
+	qtd_emb integer not null,
+	primary key(cod_pro,qtd_emb)
+);
+
+ALTER TABLE `tab_cmp` ADD `data_not` DATETIME NOT NULL
+
+ALTER TABLE `tab_compras` ADD `data_not` DATETIME NOT NULL
+
+ALTER TABLE `tab_itcmp` ADD `qtd_emb` INT UNSIGNED DEFAULT "1" NOT NULL
+
+não esquecer
+COLOCAR A DLL DA BEMATECH, E O ARQUIVO .INI em windows\system, windows, e windows\system32 (por garantia), 
+
+mais a dll

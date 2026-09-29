@@ -1,0 +1,443 @@
+        =   "Times New Roman"
+                  Size            =   15.75
+                  Charset         =   0
+                  Weight          =   700
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               Height          =   360
+               Left            =   720
+               TabIndex        =   23
+               Top             =   277
+               Width           =   165
+            End
+            Begin VB.Label lblTOtal 
+               AutoSize        =   -1  'True
+               BackStyle       =   0  'Transparent
+               Caption         =   "0,00"
+               BeginProperty Font 
+                  Name            =   "Times New Roman"
+                  Size            =   15.75
+                  Charset         =   0
+                  Weight          =   700
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               Height          =   360
+               Left            =   720
+               TabIndex        =   22
+               Top             =   0
+               Width           =   570
+            End
+            Begin VB.Label Label2 
+               AutoSize        =   -1  'True
+               BackStyle       =   0  'Transparent
+               Caption         =   "Gerado:"
+               Height          =   195
+               Left            =   120
+               TabIndex        =   21
+               Top             =   83
+               Width           =   570
+            End
+            Begin VB.Label Label3 
+               AutoSize        =   -1  'True
+               BackStyle       =   0  'Transparent
+               Caption         =   "Itens:"
+               Height          =   195
+               Left            =   120
+               TabIndex        =   20
+               Top             =   360
+               Width           =   390
+            End
+         End
+      End
+   End
+End
+Attribute VB_Name = "frmRelReceitasDespesas"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Private Sub cmbxContas_Click()
+    cmbxContas.tag = F_BuscaUmCampo("Cod_Pla", "tab_planocontas", "nome_pla='" & _
+        cmbxContas.Text & "'")
+    If cmbxContas.tag <> "" Then
+        cmndbtnGraf.Enabled = False
+    Else
+        If optnDet.Value = False Then
+            cmndbtnGraf.Enabled = True
+        End If
+    End If
+    
+End Sub
+
+Private Sub cmbxContas_KeyDown(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeyReturn Then
+        SendKeys Chr(9)
+    End If
+    If KeyCode = vbKeyDelete Then
+        cmbxContas.ListIndex = -1
+    End If
+End Sub
+
+Sub BuscaSint()
+    Dim strSQL As String
+    strSQL = "select sum(tc.valor_cla) as total,tp.nome_pla,tp.tipo_pla "
+    strSQL = strSQL & " from tab_class as tc, tab_planocontas as tp,"
+    strSQL = strSQL & " tab_financeiro as tf "
+    strSQL = strSQL & " where tc.cod_pla=tp.cod_pla "
+    strSQL = strSQL & " and tc.seq_fin=tf.seq_fin "
+    If txtbxDAtaFIn.Text <> "" Then
+        strSQL = strSQL & " and tf.data_fin<=" & F_GravaData(txtbxDAtaFIn.Text)
+    End If
+    If txtbxDataIni.Text <> "" Then
+        strSQL = strSQL & " and tf.data_fin>=" & F_GravaData(txtbxDataIni.Text)
+    End If
+    If optnDesp.Value = True Then
+        strSQL = strSQL & " and tp.tipo_pla='D'"
+    Else
+        strSQL = strSQL & " and tp.tipo_pla='C'"
+    End If
+    If cmbxContas.tag <> "" Then
+        strSQL = strSQL & " and tc.cod_pla='" & cmbxContas.tag & "'"
+    End If
+    strSQL = strSQL & " group by tc.cod_pla "
+    strSQL = strSQL & " order by tp.nome_pla"
+    dtVendas.RecordSource = strSQL
+    dtVendas.Refresh
+    soma
+End Sub
+Sub BuscaDet()
+    Dim strSQL As String
+    strSQL = "select valor_cla as total,tf.cod_con,tf.data_fin,tf.Historico_fin,tc.cod_usu, tp.nome_pla,tp.tipo_pla "
+    strSQL = strSQL & " from tab_class as tc, tab_planocontas as tp,"
+    strSQL = strSQL & " tab_financeiro as tf "
+    strSQL = strSQL & " where tc.cod_pla=tp.cod_pla "
+    strSQL = strSQL & " and tc.seq_fin=tf.seq_fin "
+    If txtbxDAtaFIn.Text <> "" Then
+        strSQL = strSQL & " and tf.data_fin<=" & F_GravaData(txtbxDAtaFIn.Text)
+    End If
+    If txtbxDataIni.Text <> "" Then
+        strSQL = strSQL & " and tf.data_fin>=" & F_GravaData(txtbxDataIni.Text)
+    End If
+    If optnDesp.Value = True Then
+        strSQL = strSQL & " and tp.tipo_pla='D'"
+    Else
+        strSQL = strSQL & " and tp.tipo_pla='C'"
+    End If
+    If cmbxContas.tag <> "" Then
+        strSQL = strSQL & " and tc.cod_pla='" & cmbxContas.tag & "'"
+    End If
+    
+    strSQL = strSQL & " order by tp.nome_pla,tf.data_fin"
+    dtVendas.RecordSource = strSQL
+    dtVendas.Refresh
+    soma
+End Sub
+
+Sub soma()
+    Dim cTotal As Currency
+    With dtVendas.Recordset
+            If .RecordCount > 0 Then .MoveFirst
+        Do While Not .EOF
+            
+            cTotal = cTotal + !total
+            .MoveNext
+        Loop
+    End With
+    lblTotal.caption = FormatVal(cTotal)
+    lblItens.caption = dtVendas.Recordset.RecordCount
+End Sub
+Private Sub Command1_Click()
+    
+End Sub
+
+Private Sub cmndbtnBuscar_Click()
+    
+    If txtbxDataIni.Text = "" Then
+        MsgBox "Informe a data Inicial!", vbExclamation
+        txtbxDataIni.SetFocus
+        Exit Sub
+    End If
+    If txtbxDAtaFIn.Text = "" Then
+        MsgBox "Informe a data Final!", vbExclamation
+        txtbxDAtaFIn.SetFocus
+        Exit Sub
+    End If
+    
+    P_Status "Aguarde..."
+    If optnSint.Value Then
+        BuscaSint
+    Else
+        BuscaDet
+    End If
+    P_Status ""
+End Sub
+
+Private Sub cmndbtnFechar_Click()
+    Unload Me
+End Sub
+
+Private Sub Command2_Click()
+
+End Sub
+
+Private Sub cmndbtnGraf_Click()
+    Dim b As BlChart
+    Dim iCount As Integer
+    On Error GoTo trata_erro
+    
+    If dtVendas.Recordset.RecordCount = 0 Then
+        MsgBox "N„o h· o que ser gerado!", vbExclamation
+        Exit Sub
+    End If
+    With dtVendas.Recordset
+        .MoveFirst
+        b.count = .RecordCount
+        For iCount = 0 To .RecordCount - 1
+            
+            b.val(iCount).caption = !nome_pla
+            b.val(iCount).Value = !total
+            .MoveNext
+        Next
+    End With
+    'P_Graph  b, 1, True, "Gr·fico de An·lise de " & _
+        IIf(optnRec.Value, "Receitas", "Despesas") & " De: " & txtbxDataIni.Text & _
+        " AtÈ: " & txtbxDAtaFIn.Text, "Fonte: " & constSigla_sis & " " & constVersao_Sis
+    
+    Exit Sub
+trata_erro:
+    P_MostraErro
+End Sub
+Sub imprimeSint(obj As Object)
+    Dim max As Integer
+    max = 40
+    P_CabRelTimbr "An·lise SintÈtica de " & _
+    IIf(optnDesp.Value, "Despesas", "Receitas"), obj
+    P_ImprLinha obj, "-"
+    Dim iCount As Integer
+    If cmbxContas.Text = "" Then
+        P_ImprX obj, "Conta: (Todas) ", 0, True
+        
+    Else
+        P_ImprX obj, "Conta: " & cmbxContas.Text, 0, True
+    End If
+    P_ImprX obj, "De: " & txtbxDataIni.Text, 50
+    P_ImprX obj, "AtÈ: " & txtbxDAtaFIn.Text, 80, False
+    P_ImprLinha obj, "-"
+    P_ImprX obj, "Conta", 0
+    P_ImprX obj, "T", 85
+    P_ImprX obj, "Valor", 120, False, 3
+    
+    P_ImprLinha obj, "-"
+    With dtVendas.Recordset
+        .MoveFirst
+        Do While Not .EOF
+            
+            If iCount = max Then
+                iCount = 0
+                P_RodapeVis obj, constNome_sis & constVersao_Sis, strNome_Emp
+                P_ImprX obj, "Conta", 0
+                P_ImprX obj, "T", 85
+                P_ImprX obj, "Valor", 120, False, 3
+                P_ImprLinha obj, "-"
+            End If
+            
+            P_ImprX obj, !nome_pla, 0
+            P_ImprX obj, !tipo_pla, 85
+            P_ImprX obj, FormatVal(!total), 120, False, 3
+            
+            
+            iCount = iCount + 1
+            .MoveNext
+        Loop
+        P_ImprLinha obj
+        obj.FontBold = True
+        P_ImprX obj, "Total...: " & lblTotal.caption, 120, False, 3
+        obj.FontBold = False
+    End With
+    
+    P_RodapeVis obj, constNome_sis & constVersao_Sis, strNome_Emp
+    
+End Sub
+Sub imprimeDet(obj As Object)
+    Dim max As Integer
+    max = 40
+    P_CabRelTimbr "An·lise Detalhada de " & _
+    IIf(optnDesp.Value, "Despesas", "Receitas"), obj
+    P_ImprLinha obj, "-"
+    Dim iCount As Integer
+    If cmbxContas.Text = "" Then
+        P_ImprX obj, "Conta: (Todas) ", 0, True
+        
+    Else
+        P_ImprX obj, "Conta: " & cmbxContas.Text, 0, True
+    End If
+    P_ImprX obj, "De: " & txtbxDataIni.Text, 50
+    P_ImprX obj, "AtÈ: " & txtbxDAtaFIn.Text, 80, False
+    P_ImprLinha obj, "-"
+    P_ImprX obj, "Conta", 0
+    P_ImprX obj, "T", 35
+    P_ImprX obj, "Valor", 50, True, True
+    P_ImprX obj, "Data", 55
+    P_ImprX obj, "HistÛrico", 75
+    P_ImprX obj, "C/C.", 165
+    P_ImprX obj, "Usu.", 190, False
+    P_ImprLinha obj, "-"
+    With dtVendas.Recordset
+        .MoveFirst
+        Do While Not .EOF
+            
+            If iCount = max Then
+                iCount = 0
+                P_RodapeVis obj, constNome_sis & constVersao_Sis, strNome_Emp
+                P_ImprX obj, "Conta", 0
+                P_ImprX obj, "T", 35
+                P_ImprX obj, "Valor", 50, True, True
+                P_ImprX obj, "Data", 55
+                P_ImprX obj, "HistÛrico", 75
+                P_ImprX obj, "C/C.", 165
+                P_ImprX obj, "Usu.", 190, False
+                P_ImprLinha obj, "-"
+            End If
+            
+            P_ImprX obj, !nome_pla, 0
+            P_ImprX obj, !tipo_pla, 35
+            P_ImprX obj, FormatVal(!total), 50, True, True
+            P_ImprX obj, !data_fin, 55
+            P_ImprX obj, Left(!historico_fin, 40), 75
+            P_ImprX obj, F_BuscaUmCampo("nome_con", "tab_Contas", _
+                "cod_con='" & !cod_con & "'"), 165
+            P_ImprX obj, !cod_usu, 190, False
+            
+            iCount = iCount + 1
+            .MoveNext
+        Loop
+        P_ImprLinha obj
+        obj.FontBold = True
+        P_ImprX obj, "Total...: " & lblTotal.caption, 50, False, 3
+        obj.FontBold = False
+    End With
+    
+    P_RodapeVis obj, constNome_sis & constVersao_Sis, strNome_Emp
+    
+End Sub
+
+Private Sub cmndbtnImprimir_Click()
+    On Error GoTo trata_erro
+    With dtVendas.Recordset
+        If .RecordCount = 0 Then
+            MsgBox "N„o h· o que ser impresso!", vbExclamation
+            Exit Sub
+        End If
+        If optnDet.Value Then
+            imprimeDet frmVisualiza.Pic
+            frmVisualiza.Show 1
+            If frmVisualiza.tag <> "" Then
+                imprimeDet Printer
+                Printer.EndDoc
+            End If
+            Unload frmVisualiza
+        End If
+        If optnSint.Value Then
+            imprimeSint frmVisualiza.Pic
+            frmVisualiza.Show 1
+            If frmVisualiza.tag <> "" Then
+                imprimeSint Printer
+                Printer.EndDoc
+            End If
+            Unload frmVisualiza
+        End If
+    End With
+Exit Sub
+trata_erro:
+    P_MostraErro
+End Sub
+
+Private Sub Form_Load()
+    P_CentraForm Me
+    optnRec_Click
+    optnDet_Click
+    dtVendas.Connect = Banco.Connect
+End Sub
+
+Private Sub optnDesp_Click()
+    P_PreenchePlanoContas cmbxContas, False
+End Sub
+
+Private Sub optnDesp_KeyDown(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeyReturn Then
+        SendKeys Chr(9)
+    End If
+End Sub
+
+Private Sub optnDet_Click()
+    Dim iCount As Integer
+    For iCount = 3 To 6
+        dbgrd.Columns(iCount).Visible = True
+    Next
+    cmndbtnGraf.Enabled = False
+End Sub
+
+Private Sub optnDet_KeyDown(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeyReturn Then
+        SendKeys Chr(9)
+    End If
+End Sub
+
+Private Sub optnRec_Click()
+    P_PreenchePlanoContas cmbxContas, True
+End Sub
+
+Private Sub optnRec_KeyDown(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeyReturn Then
+        SendKeys Chr(9)
+    End If
+End Sub
+
+Private Sub optnSint_Click()
+    Dim iCount As Integer
+    For iCount = 3 To 6
+        dbgrd.Columns(iCount).Visible = False
+    Next
+    cmndbtnGraf.Enabled = True
+End Sub
+
+Private Sub optnSint_KeyDown(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeyReturn Then
+        SendKeys Chr(9)
+    End If
+End Sub
+
+Private Sub txtbxDAtaFIn_GotFocus()
+    P_SelecTexto txtbxDAtaFIn
+End Sub
+
+Private Sub txtbxDataFin_KeyDown(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeyReturn Then
+        SendKeys Chr(9)
+    End If
+End Sub
+
+Private Sub txtbxDAtaFIn_LostFocus()
+    P_AjustaData txtbxDAtaFIn
+End Sub
+
+Private Sub txtbxDataIni_GotFocus()
+    P_SelecTexto txtbxDataIni
+End Sub
+
+Private Sub txtbxDataIni_KeyDown(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeyReturn Then
+        SendKeys Chr(9)
+    End If
+End Sub
+
+Private Sub txtbxDataIni_LostFocus()
+    P_AjustaData txtbxDataIni
+End Sub
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    «E¯    ãuã∆É‡âE¸ÉÊ˛VâuãˇQã3ˇVâ}Ëâ}‰ˇí0  PçE‰Pˇ    ã°   çUËãRPˇQ$;«€‚}ã   j$h    QPˇ    ãEËãPVˇí‹   ;«€‚}h‹   h    VPˇ    çMËˇ    çM‰ˇ    â}¸h    ÎçMËˇ    çM‰ˇ    √√ãEPãˇQãE¸ãMÏ_^dâ    [ãÂ]¬ êêêê                     %   s    X   3    _   p    u   p    |   o    Ñ   	    °       ©   	    ≤   #    ª   1    √   m    Œ   #    ◊   1    Ò                        n       l    UãÏÉÏh    d°    Pdâ%    ÉÏSVWâeÙ«E¯    ãuã∆É‡âE¸ÉÊ˛VâuãˇQã3ˇVâ}Ëˇí  PçEËPˇ    çMËQË    çMËˇ    â}¸h    Î
+çMËˇ    √√ãEPãˇRãE¸ãMÏ_^dâ    [ãÂ]¬ ê                     %       U   3    ^   |    g   1    o   z    z   1    î                        {       y    UãÏÉÏh    d°    Pdâ%    ÉÏ<SVWâeÙ«E¯    ãEã»É·âM¸$˛PâEãˇRãE3ˆâuËâuÿfÉ8âu»uOçMÿj	Q«E– Ä«E»
+   ˇ    çU»çEÿRçMËPQˇ    Pˇ    çMËˇ    çU»çEÿRPjˇ    Éƒâu¸h    ÎçMËˇ    çM»çUÿQRjˇ    Éƒ√√ãEPãˇQãE¸ãMÏ_^dâ    [ãÂ]¬ êêêêêêê                     %   é    i   ã    {   ä    Ç   â    ã   #    õ   à    ¶   Ü    ±   #    ¡   à    ﬁ                        á       Ö    UãÏÉÏh    d°    Pdâ%    ÉÏSVWâeÙ«E¯    ãuã∆É‡âE¸ÉÊ˛VâuãˇQ3ˇ∫    çMËâ}Ëâ}ÿˇ    ãVˇí  âE‡çEËçMÿPQ«Eÿ	   Ë    çMËˇ    çMÿˇ    â}¸h    ÎçMËˇ    çMÿˇ    √√ãEPãˇRãE¸ãMÏ_^dâ    [ãÂ]¬ êêêêêêêêêêê                     %   õ    C   ò    R 

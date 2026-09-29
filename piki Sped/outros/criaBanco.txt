@@ -1,0 +1,897 @@
+create table tab_caixas
+(
+	num_cai char(2) not null,
+	status_cai char(1) not null,
+	ultacesso_cai datetime not null,
+	cod_usu char(3) not null,
+	primary key(num_cai)
+);
+
+
+create table if not exists TAB_FORNECEDORES
+(
+   COD_FOR                        char(5)                        not null,
+   NOME_FOR                       char(50) 			 NOT NULL,
+   FANTASIA_FOR                   char(50),			 
+   CNPJ_FOR                       char(18)			 NOT NULL,
+   IE_FOR                         char(12),
+   ENDERECO_FOR                   char(30),
+   BAIRRO_FOR                     char(20),
+   CIDADE_FOR                     char(30),
+   UF_FOR                         char(2),
+   CEP_FOR                        char(8),
+   TELEFONE_FOR                   char(16),
+   FAX_FOR                   	  char(16),
+   CONTATO_FOR			  CHAR(30),
+   EMAIL_FOR                      char(64),
+
+ 	
+   primary key (COD_FOR)
+);
+
+
+create table if not exists TAB_CLIENTES
+(
+   COD_CLI                        char(5)                        not null,
+   NOME_CLI                       char(50) NOT NULL,
+   CPF_CLI                        char(18) NOT NULL,
+   RG_CLI                         char(16),
+   ENDERECO_CLI                   char(30),
+   BAIRRO_CLI                     char(20),
+   CIDADE_CLI                     char(30),
+   UF_CLI                         char(2),
+   CEP_CLI                        char(12),
+   TELEFONE_CLI                   char(14),
+   TIPO_CLI 			  CHAR(1) NOT NULL DEFAULT 'F',	   
+
+   primary key (COD_CLI)
+   
+);
+
+create table tab_categorias
+(
+	cod_cat char(3) not null,
+	nome_cat char(40) not null,
+        primary key (cod_cat)
+   
+);
+
+
+create table tab_marcas
+(
+      cod_mar char(3) not null,
+      nome_mar char(40) not null,
+      primary key (cod_mar)
+);
+
+create table tab_produtos 
+(
+	cod_pro char(8) not null,
+	codbarra_pro char(16) not null,
+	nome_pro char(50) not null,
+        unidade_pro char(3) not null,
+	cod_cat char(3) not null,
+	cod_mar char(3) not null,
+	codfab_pro char(30),
+	custo_pro decimal(14,2) not null,
+	preco_pro decimal(14,2) not null,
+	precomin_pro decimal(14,2) not null default 0,
+	estoque_pro decimal(14,2) not null default 0,
+	reservado_pro decimal(14,2) not null default 0,
+	lucro_pro decimal(14,2) not null default 0,
+	endereco_pro char(10),
+	primary key (cod_pro)
+);
+
+create table tab_composicao 
+(
+	cod_pro char(8) not null,
+	c1_pro decimal(14,2) not null default 0,
+	c2_pro decimal(14,2) not null default 0,
+	p1_pro decimal(14,2) not null default 0,
+	p2_pro decimal(14,2) not null default 0,
+	e1_pro decimal(14,2) not null default 0,
+	e2_pro decimal(14,2) not null default 0,
+	r_pro decimal(14,2) not null default 0,
+	
+	primary key(cod_pro)
+);
+
+create table if not exists TAB_COMPRAS
+(
+   COD_FOR                        char(5)                        not null,
+   NUM_NOT                        char(16)                       not null,
+   SERIE_NOT                      char(4)                        not null,
+   VALOR_NOT                 	    decimal(14,2)  		     not null,
+   BC_NOT                         decimal(14,2),
+   FRETE_NOT                        decimal(14,2),
+   ICMS_NOT                       decimal(14,2),
+   IPI_NOT                        decimal(14,2),
+   DESPESAS_NOT              decimal(14,2), 
+   OPERACAO_NOT     char(6) not null,
+   EMISSAO_NOT        date                    not null,
+   ENTRADA_NOT        date                    not null,
+   COD_USU CHAR(3) NOT NULL,
+   STATUS_NOT CHAR(1) NOT NULL,	  	
+   primary key (COD_FOR, NUM_NOT, SERIE_NOT)
+);
+
+	
+create table if not exists TAB_ITCOMPRAS
+(
+   COD_FOR                        char(5)                        not null,
+   NUM_NOT                        char(16)                       not null,
+   SERIE_NOT                      char(4)                        not null,
+   COD_PRO			  char(8) not null,
+   UNIT_ITE 			  DECIMAL(14,2) NOT NULL, 	
+   QTD_ITE			  DECIMAL(14,2) NOT NULL, 	
+   IPI_ITE		          DECIMAL(14,2),
+   GASTOS_ITE		          DECIMAL(14,2),
+   CUSTO_ITE		          DECIMAL(14,2),
+   SEQ_ITE			  INTEGER NOT NULL,		
+   primary key (COD_FOR, NUM_NOT, SERIE_NOT,cod_pro)
+    
+   
+);
+create table if not exists TAB_CMP
+(
+   COD_FOR                        char(5)                        not null,
+   NUM_NOT                        char(16)                       not null,
+   SERIE_NOT                      char(4)                        not null,
+   VALOR_NOT                 	    decimal(14,2)  		     not null,
+   BC_NOT                         decimal(14,2),
+   FRETE_NOT                        decimal(14,2),
+   ICMS_NOT                       decimal(14,2),
+   IPI_NOT                        decimal(14,2),
+   DESPESAS_NOT              decimal(14,2), 
+   OPERACAO_NOT     char(6) not null,
+   EMISSAO_NOT        date                    not null,
+   ENTRADA_NOT        date                    not null,
+   COD_USU CHAR(3) NOT NULL,
+   STATUS_NOT CHAR(1) NOT NULL,	  	
+   primary key (COD_FOR, NUM_NOT, SERIE_NOT)
+);
+
+	
+create table if not exists TAB_ITCMP
+(
+   COD_FOR                        char(5)                        not null,
+   NUM_NOT                        char(16)                       not null,
+   SERIE_NOT                      char(4)                        not null,
+   COD_PRO			  char(8) not null,
+   UNIT_ITE 			  DECIMAL(14,2) NOT NULL, 	
+   QTD_ITE			  DECIMAL(14,2) NOT NULL, 	
+   IPI_ITE		          DECIMAL(14,2),
+   GASTOS_ITE		          DECIMAL(14,2),
+   CUSTO_ITE		          DECIMAL(14,2),
+   SEQ_ITE			  INTEGER NOT NULL,		
+   primary key (COD_FOR, NUM_NOT, SERIE_NOT,cod_pro)
+
+);
+
+create table if not exists TAB_VENDAS 
+(
+   NUM_VEN			char(7) not null,	
+   COD_CLI                      char(5) not null,
+   VALOR_VEN                 	decimal(14,2)  not null,
+   DESCONTO_VEN			decimal(14,2),
+   DATA_VEN        		datetime     not null,
+   VENDEDOR_VEN			CHAR(3) NOT NULL,
+   COD_USU 			CHAR(3) NOT NULL,
+   COD_TIP			CHAR(2) NOT NULL,
+   SITUACAO_VEN			CHAR(1) NOT NULL,			
+   OBS_VEN 			CHAR(64),	
+   primary key (NUM_VEN)
+    
+   
+);
+create table if not exists TAB_ORC 
+(
+   num_orc			char(7) not null,	
+   cod_cli                      char(5) not null,
+   nomecli_cli                  char(5) not null,
+   valor_orc                 	decimal(14,2)  not null,
+   desconto_orc			decimal(14,2),
+   data_orc        		datetime     not null,
+   validade_orc			CHAR(3) NOT NULL,
+   cod_usu 			CHAR(3) NOT NULL,
+   situacao_orc			CHAR(1) NOT NULL,	
+   obs_orc 			CHAR(64),	
+   primary key (num_orc)
+    
+   
+);
+create table if not exists tab_itorc
+(
+   num_orc		char(7) not null,	
+   cod_pro		CHAR(8) NOT NULL,	
+   unit_ite		DECIMAL(14,2) NOT NULL,
+   qtd_ite		DECIMAL(14,2) NOT NULL,
+   seq_ite 		INTEGER 	NOT NULL,		
+   primary key (num_orc,cod_pro)
+   
+);
+
+create table if not exists TAB_ITVENDAS
+(
+   NUM_VEN		char(7) not null,	
+   COD_PRO		CHAR(8) NOT NULL,	
+   UNIT_ITE		DECIMAL(14,2) NOT NULL,
+   QTD_ITE		DECIMAL(14,2) NOT NULL,
+   SEQ_ITE 		INTEGER 	NOT NULL,		
+   primary key (NUM_VEN,COD_PRO)
+   
+);
+
+create table if not exists TAB_DEVOLUCOES 
+(
+   NUM_DEV			char(7) not null,	
+   COD_CLI                      char(5) not null,
+   VALOR_DEV                 	decimal(14,2)  not null,
+   DESCONTO_DEV			decimal(14,2),
+   DATA_DEV        		datetime     not null,
+   VENDEDOR_DEV			CHAR(3) NOT NULL,
+   COD_USU 			CHAR(3) NOT NULL,
+   COD_TIP			CHAR(2) NOT NULL,
+   SITUACAO_DEV			CHAR(1) NOT NULL,			
+   OBS_DEV 			CHAR(64),	
+   primary key (NUM_DEV)
+    
+   
+);
+
+create table if not exists TAB_ITdev
+(
+   NUM_DEV		char(7) not null,	
+   COD_PRO		CHAR(8) NOT NULL,	
+   UNIT_ITE		DECIMAL(14,2) NOT NULL,
+   QTD_ITE		DECIMAL(14,2) NOT NULL,
+   SEQ_ITE 		INTEGER 	NOT NULL,		
+   primary key (NUM_DEV,COD_PRO)
+   
+);
+
+
+create table if not exists TAB_SAIDAS
+(
+	COD_CLI CHAR(5) NOT NULL,
+	NOTA_SAI CHAR(12) NOT NULL,
+	SERIE_SAI CHAR(4) NOT NULL,
+	VALOR_SAI DECIMAL(14,2),
+	DESCONTO_SAI DECIMAL(14,2),
+	ICMS_SAI DECIMAL(14,2),
+	COD_VEN CHAR(7) NOT NULL,
+	COD_USU CHAR(3) NOT NULL,
+	PRIMARY KEY(NOTA_SAI,SERIE_SAI)
+);
+
+create table if not exists TAB_ITSAI
+(
+	NOTA_SAI CHAR(12) NOT NULL,
+	SERIE_SAI CHAR(4) NOT NULL,
+	UNIT_ITS DECIMAL(14,2),
+	QTD_ITS DECIMAL(14,2),
+	COD_PRO CHAR(8) NOT NULL,
+	SEQ_ITS INTEGER NOT NULL,
+	PRIMARY KEY(NOTA_SAI,SERIE_SAI,COD_PRO)
+);
+
+
+///AQUI///
+
+create table if not exists TAB_ENTREGAS
+(
+   COD_ENT  		    	char(5) not null,	
+   NUM_VEN			CHAR(7) NOT NULL,	
+   DATA_ENT			DATE NOT NULL,
+   SITUACAO_ENT			CHAR(1) NOT NULL,
+   TIPO_ENT			CHAR(1) NOT NULL,
+   COD_FUN			CHAR(3),   
+   primary key (COD_ENT)
+);
+
+
+create table if not exists TAB_ITVENDAS
+(
+   cod_LOJ		char(3) not null,
+   NUM_VEN		char(7) not null,	
+   COD_PRO		CHAR(8) NOT NULL,	
+   UNIT_ITE		DECIMAL(14,2) NOT NULL,
+   QTD_ITE		DECIMAL(14,2) NOT NULL,
+   SEQ_ITE 		INTEGER 	NOT NULL,		
+   primary key (cod_loj,NUM_VEN,COD_PRO)
+   
+);
+create table if not exists TAB_SAIDAS
+(
+	COD_CLI CHAR(5) NOT NULL,
+	NOTA_SAI CHAR(12) NOT NULL,
+	SERIE_SAI CHAR(4) NOT NULL,
+	VALOR_SAI DECIMAL(14,2),
+	DESCONTO_SAI DECIMAL(14,2),
+	ICMS_SAI DECIMAL(14,2),
+	COD_VEN CHAR(7) NOT NULL,
+	COD_USU CHAR(3) NOT NULL,
+	PRIMARY KEY(NOTA_SAI,SERIE_SAI)
+);
+
+create table if not exists TAB_ITSAI
+(
+	NOTA_SAI CHAR(12) NOT NULL,
+	SERIE_SAI CHAR(4) NOT NULL,
+	UNIT_ITS DECIMAL(14,2),
+	QTD_ITS DECIMAL(14,2),
+	COD_PRO CHAR(8) NOT NULL,
+	SEQ_ITS INTEGER NOT NULL,
+	PRIMARY KEY(NOTA_SAI,SERIE_SAI,COD_PRO)
+);
+	
+
+create table if not exists TAB_FUNCIONARIOS
+(
+   COD_FUN  		    	char(3) not null,	
+   NOME_FUN			CHAR(50) NOT NULL,	
+   GUERRA_FUN			CHAR(16) NOT NULL,	
+   COD_CAR			CHAR(3),
+   RG_FUN   			CHAR(18),
+   CPF_FUN   			CHAR(18),
+   ENDERECO_FUN			CHAR(64),
+   TELEFONE_FUN			CHAR(16),
+   STATUS_FUN			CHAR(1),			
+   primary key (COD_FUN)
+ );
+
+create table if not exists TAB_USUARIOS
+(
+   COD_FUN  		    	char(3) not null,	
+   ULTACESSO_USU		DATETIME ,
+   NIVEL_USU			CHAR(1) NOT NULL DEFAULT '1' ,
+   SENHA_USU			CHAR(10),	
+   Status_USU			CHAR(1) not null default 1,	
+   primary key (COD_FUN)
+ );
+
+create table if not exists TAB_CARGOS
+(
+   COD_CAR  		    	char(3) not null,	
+   NOME_CAR			CHAR(20) NOT NULL,
+   PRIMARY KEY(COD_CAR)
+);
+
+create table if not exists TAB_CAIXA
+(
+   SEQ_CAI  		    	CHAR(7) NOT NULL,	
+   DATA_CAI  		    	DATE NOT NULL,	
+   VALOR_CAI			DECIMAL(14,2) NOT NULL,
+   entrada_CAI			DECIMAL(14,2) NOT NULL,
+   troco_CAI			DECIMAL(14,2) NOT NULL,
+  HISTORICO_CAI		CHAR(50) NOT NULL,
+   TIPO_CAI			CHAR(1) NOT NULL,
+   esp_cai			char(3) not null,
+   NUM_VEN			CHAR(7),
+   cod_con 			char(2)  not null default '01',
+   primary key (SEQ_CAI)
+ );
+
+create table tab_caixas(
+	cod_cai	char(2) not null,
+	nome_cai char(10) not null,
+	ip_cai char(11) not null,
+	primary key(cod_cai)
+);
+
+create table if not exists TAB_FECHACAIXA
+(
+   DATA_CAI  		    	DATE not null,	
+   VALOR_FEC			DECIMAL(14,2) NOT NULL,
+   COD_USU			CHAR(10) NOT NULL,	
+   cod_cai			char(2) not null,
+   primary key (DATA_CAI,cod_cai)
+);
+
+create table if not exists TAB_TIPOVEN
+(
+   COD_TIP  		    	CHAR(2) NOT NULL,	
+   PARCELAS_TIP			INTEGER NOT NULL,
+   JUROS_TIP			DECIMAL(14,4) NOT NULL,	
+   DESCRICAO_TIP		CHAR(20) NOT NULL,	
+   ENTRADA_TIP			CHAR(1) NOT NULL,
+   INTERVALO_TIP		INTEGER NOT NULL,
+   primary key (COD_TIP)
+ );
+
+create table if not exists TAB_FINANCEIRAS
+(
+   COD_FIN	CHAR(2) NOT NULL,
+   COD_TIP	CHAR(2) NOT NULL,
+   TIPO_FIN     CHAR(1) NOT NULL,
+   TEL_FIN	CHAR(13) NOT NULL, 
+   NOME_FIN	CHAR(20) NOT NULL,
+   PRIMARY KEY(COD_FIN)	
+);
+
+create table if not exists TAB_PARAMETROS
+(
+   NOME_EMP                       char(40),
+   ENDERECO_EMP                   char(20),
+   BAIRRO_EMP                     char(20),
+   CIDADE_EMP                     char(20),
+   UF_EMP                         char(2),
+   CEP_EMP			  char(10),	  
+   FONE_EMP			  char(16),	
+   FAX_EMP			  char(14),	
+   CNPJ_EMP			  char(18),	
+   IE_EMP			  char(12),	
+   NOMERESP_EMP			  char(40),	
+   CPFRESP_EMP			  char(14),
+   RGRESP_EMP			  char(14),
+   NOMEMOEDA_PAR		  char(10),	
+   SIMBMOEDA_PAR		  char(3),
+   PLURALMOEDA_PAR		  char(14),	
+   TXFEDERATIVA_PAR		  DECIMAL(14,2),	
+   TXADM_PAR			  DECIMAL(14,2),
+   TXDIVERSAS_PAR		  DECIMAL(14,2),
+   MARGEMSEG_PAR		  DECIMAL(14,2)
+);
+create table tab_aparencia
+(
+   cod_usu			    char(3) not null,	
+   CORFUNDO_PAR			    char(12),
+   CORCAIXA_PAR			    char(12),
+   CORFONTE_PAR			    char(12),
+   CORForm_PAR			    char(12),
+   CORFrame_PAR			    char(12),
+   CORFONTECAIXA_PAR		    char(12),
+   PATHPIC_PAR			    char(255),
+   TOOLVISIBLE_PAR	            char(1),
+   appearance_par		    char(1),			
+   primary key(cod_usu)
+);
+create table if not exists tab_cheques
+(
+	seq_che	char(7) not null, 
+	num_che char(12) not null,
+	cod_bco char(3) not null,
+	dep_che date,
+	age_che char(8),
+	cco_che char(12),
+	nome_che char(50),
+	valor_che decimal(14,2),
+	venc_che date not null,
+	cod_ter char(5) not null,
+	tipo_che char(1) not null,
+	seq_doc char(7),
+	parc_che integer not null,
+	primary key(seq_che)
+			
+);
+
+
+create table if not exists tab_doc
+(
+	seq_doc	char(7) not null, 
+	num_doc char(12) not null,
+	valor_doc decimal(14,2),
+	data_doc date not null,
+	cod_ter char(5) not null,
+	tipo_doc char(1) not null,
+	num_ven char(7),
+	parc_doc integer,
+	primary key(seq_doc)
+	
+);
+
+create table if not exists tab_Itdoc
+(
+	seq_itd char(7) not null,
+	seq_doc	char(7) not null, 
+	Valor_itd decimal(14,2),
+	Reman_itd decimal(14,2),
+	Venc_itd date not null,
+	juros_itd decimal(14,2),
+        baixa_itd date,
+        parc_itd integer not null,
+	primary key(seq_itd)
+);
+
+
+
+
+create table tab_contas
+(
+	cod_con char(3) not null,
+	nome_con char(20) not null,
+	num_con char(12),
+	cod_bco char(3),
+	age_con	char(12),
+	tit_con char(30),
+	status_con char(1) default 'H' not null,
+	primary key(cod_con)
+);
+
+create table tab_invent
+(
+	cod_pro char(8) not null,
+	nome_pro char(50) not null,
+	unidade_pro char(3) not null,
+	custo_pro decimal(14,2) not null default 0,
+	customedio_pro decimal(14,2) not null default 0,
+	preco_pro decimal(14,2) not null default 0,
+	estoque_pro decimal(14,2) not null default 0,
+	reservado_pro decimal(14,2) not null default 0,
+	datahora_inv datetime not null,
+	index(cod_pro,nome_pro,datahora_inv)
+);
+
+create table if not exists TAB_FINANCEIRO
+(
+   	SEQ_FIN		CHAR(7) NOT NULL,
+	DATA_FIN 	DATE	NOT NULL,
+	VALOR_FIN	DECIMAL(14,2) NOT NULL,
+   	HISTORICO_FIN	CHAR(50) NOT NULL,
+   	TIPO_FIN	CHAR(1) NOT NULL,
+   	ESP_FIN		char(3) not null,
+   	cod_con 	char(2)  not null default '01',
+   	primary key (SEQ_FIN)
+);
+
+create table tab_lojas
+(
+	cod_loj		CHAR(3) NOT NULL,
+	nome_loj	char(40) not null,
+	cnpj_loj	char(18),
+        ie_loj	char(18),
+	status_loj	char(1) not null default 1,
+	cidade_loj	char(18),
+	endereco_loj	char(40),
+	uf_loj		char(2) not null,
+	fone_loj	char(20),
+	primary key(cod_loj)
+);
+
+create table tab_estoque
+(
+	cod_pro 	char(8) not null,
+	cod_loj		char(3) not mull,
+	estoque_pro	decimal(14,2) not null default 0,
+	custo_pro	decimal(14,2) not null default 0,
+	customed_pro	decimal(14,2) not null default 0,
+	ultcusto_pro	decimal(14,2) not null default 0,
+	precomin_pro	decimal(14,2) not null default 0,
+	preco_pro	decimal(14,2) not null default 0,
+	primary key(cod_pro,cod_loj)
+);
+		
+create table tab_planocontas
+(
+	cod_pla char(3) not null,
+	nome_pla char(40) not null,
+	tipo_Pla char(1) not null,
+	primary key(cod_pla)
+);
+
+create table tab_transferencias
+(
+	seq_tra		integer not null,
+	cod_loj		char(3) not null,
+	expressao_tra	longtext,
+	data_tra	datetime not null,
+	status_tra	char(1) not null default 0,
+	tab_tra		char(50) not null,
+	primary key (seq_tra)
+);
+create table tab_log
+(
+	seq_log		integer not null,
+	cod_loj		char(3) not null,
+	expressao_log	longtext,
+	data_log	datetime not null,
+	status_log	char(1) not null default 0,
+	tab_log		char(50) not null,
+	primary key (seq_log)
+);
+
+create table tab_defusu
+(
+	cod_usu char(3) not null,
+	abrevenda_usu char(1) not null default 'N',
+	abrenota_usu char(1) not null default 'N',
+	efetnota_usu char(1) not null default 'N',
+	abresaida_usu char(1) not null default 'N',
+	lancaixa_usu char(1) not null default 'N',
+	landoc_usu char(1) not null default 'N',
+	lanche_usu char(1) not null default 'N',
+	baixadoc_usu char(1) not null default 'N',
+	baixache_usu char(1) not null default 'N',
+	edicai_usu char(1) not null default 'N',
+	exclcai_usu char(1) not null default 'N',
+	excldoc_usu char(1) not null default 'N',
+	cadprod_usu char(1) not null default 'N',
+	altprod_usu char(1) not null default 'N',
+	altpreco_usu char(1) not null default 'N',
+	cadusu_usu  char(1) not null default 'N',
+	cadcli_usu  char(1) not null default 'N',
+	cadcco_usu  char(1) not null default 'N',
+	cadformaspag_usu  char(1) not null default 'N',
+	altformaspag_usu  char(1) not null default 'N',
+	viscusto_usu char(1) not null default 'N',
+	visrelest_usu char(1) not null default 'N',
+	visrelfin_usu char(1) not null default 'N',
+	fechacai_usu char(1) not null default 'N',
+	fechames_usu char(1) not null default 'N',
+	desconto_usu decimal(14,2) not null default 0,
+	primary key(cod_usu)
+);
+
+	create table tab_contagens
+(
+	seq_cnt CHAR(3) not null,
+	data_cnt datetime not null,
+	cod_usu char(3) not null,
+	status_cnt char(1) not null default 'N',
+	primary key (seq_cnt)
+	
+);
+create table tab_itcont
+(
+	seq_cnt CHAR(3) not null,
+	cod_pro char(8) not null,
+	qtd_itc decimal(14,2) not null,
+	data_itc datetime not null, 
+	primary key (seq_cnt,cod_pro)
+	
+);
+create table tab_venfec(
+	num_ven char(7) not null,
+	avista_ven decimal (14,2) not null,
+	aprazo_ven decimal (14,2) not null,
+	finan_ven decimal (14,2) not null,
+	valorfinal_ven decimal (14,2) not null,
+	desconto_ven decimal (14,2) not null,
+	cod_usu char(3) not null,
+	cod_tip	char(2),
+	cod_fin char(2),
+	tipo_ven char(1) not null default 1,
+	primary key(num_ven)
+);
+create table if not exists TAB_VENFIN
+(	
+   	NUM_VEN	CHAR(7) NOT NULL,
+	COD_FIN	CHAR(2) NOT NULL,
+	VALOR_VEN DECIMAL(14,2) NOT NULL,
+	DATA_VEN DATE NOT NULL,
+	COD_USU CHAR(3) NOT NULL,
+	COD_CLI CHAR(5) NOT NULL,
+	AUTORIZACAO_VEN CHAR(20),
+	BAIXA_VEN DATE,
+	STATUS_VEN CHAR(1) NOT NULL DEFAULT 1,
+	PRIMARY KEY(NUM_VEN)
+);
+create table tab_arranjos
+(
+	num_arr char(7) not null,
+	data_arr date not null,
+	hora_arr datetime not null,
+	cod_usu char(3) not null,
+	gerado_arr decimal(14,2) not null default 0,
+	situacao_arr char(1) not null default 1,
+	primary key(num_arr)
+);
+create table tab_itarr
+(
+	num_arr char(7) not null,
+	cod_pro char(8) not null,
+	qtd_ite decimal(14,2) not null,
+	unit_ite decimal(14,2) not null,
+	primary key(num_arr,cod_pro)
+);
+create table tab_perdas
+(
+	seq_per char(7) not null,
+	data_per date not null,
+	cod_usu char(3) not null,
+	situacao_per char(1) not null default 1,
+	cod_for char(5) not null,
+	primary key(seq_per)
+);
+create table tab_itperdas
+(
+	seq_per char(7) not null,
+	cod_pro char(8) not null,
+	qtd_ipt decimal(14,2)
+	item_itp integer not null,
+	primary key(seq_per,cod_pro)
+);
+	
+create table tab_transf
+(
+	seq_tra char(5) not null, 	
+	cod_loj char(3) not null,
+	data_tra date not null,
+	situacao_tra char(1) not null default 1,
+	cod_usu char(3) not null,
+	primary key(seq_tra)
+);
+create table tab_ittransf
+(
+	seq_tra char(5) not null,
+	cod_pro char(8) not null,
+	qtd_itt decimal(14,2) not null default 0,
+	unit_itt decimal(14,2) not null default 0,
+	item_itt integer not null default 0,
+	primary key(seq_tra,cod_pro)
+);
+	
+create table tab_codbarras
+(
+	cod_pro char(8) not null,
+	codbarra_pro char(16) not null,
+	primary key(cod_pro,codbarra_pro)
+);
+
+create table tab_trocas
+(
+	num_ven char(7) not null,
+	data_tro datetime not null,
+	cod_usu char(3) not null,
+	seq_tro char(7) not null,
+	abat_tro decimal(14,2) not null,
+	acres_tro decimal(14,2) not null,
+	primary key(seq_tro)
+);
+
+create table tab_ittrocas
+(
+	seq_tro char(7) not null,
+	cod_pro char(8) not null,
+	qtdant_itt decimal(14,2) not null,
+	qtdatual_itt decimal(14,2) not null,
+	unit_itt decimal(14,2) not null,
+	primary key(seq_tro,cod_pro)
+);
+create table tab_impostos(
+	cod_imp char(3) not null,
+	desc_imp char(10) not null,
+	perc_imp decimal(14,2) not null,
+	ecf_imp char(3) not null default ' ',
+	primary key (cod_imp)
+);
+
+crate table tab_turnos(
+	cod_tur char(1) not null,
+	horaini_tur char(5) not null,
+	horafin_tur char(5) not null,
+	primary key(cod_tur)
+);
+create table tab_turncai(
+	cod_tur char(1) not null,
+	cod_cai char(2) not null,
+	data_tur date not null,
+	login_usu char(3) not null,
+	logout_usu char(3) not nul,
+	abertura_tur char(5) not null,
+	fechamento_tur char(5) not null,
+	primary key(cod_tur,cod_cai,data_cai)
+);
+	
+	
+create table tab_embalagens(
+	cod_pro char(8) not null,
+	qtd_emb integer not null,
+	primary key(cod_pro,qtd_emb)
+);
+
+create table tab_movint(
+	Num_mov char(7) not null,
+	tipo_mov char(1) not null,
+	desc_mov char(40) not null,
+	valor_mov decimal(14,2) not null,
+	data_mov date not null,
+	situacao_mov char(1) not null default 1,
+	cod_usu char(3) not null,
+	dataefet_mov date not null,
+	primary key(num_mov)
+);
+create table tab_itmov(
+	Num_mov char(7) not null,
+	cod_pro char(8) not null,
+	qtd_ite decimal(14,2) not null,
+	custo_ite decimal(14,2) not null,
+	unit_ite decimal(14,2) not null,	
+	seq_ite integer not null,
+	primary key(num_mov,cod_pro)	
+);
+create table tab_itvndcncl
+(
+	seq_itv char(7) not null,
+	num_ven char(7) not null,
+	seq_ite integer not null,
+	qtd_ite decimal(14,2) not null,
+	unit_ite decimal(14,2) not null,
+	cod_cai char(2) not null,
+	cod_tur char(1) not null,
+	primary key(Seq_itv)
+);
+
+create table tab_chequedev
+(
+	seq_che char(7) not null,
+	seq_dev integer not null,
+	data_dev date not null,
+	motivo_dev char(30) not null,
+	primary key(seq_che,seq_dev)
+);
+
+create table tab_chv
+(
+	seq_cai char(7) not null,
+	num_che char(12) not null,
+	cod_bco char(3) not null,
+	age_che char(8) not null,
+	cco_che char(12) not null,
+	cpf_che char(18) not null,
+	nome_che char(50) not null,
+	valor_che decimal(14,2) not null,
+	primary key(seq_cai)
+);
+
+create table tab_chequerec
+(
+	seq_che char(7) not null,
+	num_che char(12) not null,
+	cod_bco char(3) not null,
+	age_che char(8) not null,
+	cco_che char(12) not null,
+	cpf_che char(18) not null,
+	nome_che char(50) not null,
+	primary key(seq_che)
+);
+
+
+create table tab_chequepag
+(
+	seq_che char(7) not null,
+	num_che char(12) not null,
+	cod_con char(3) not null,
+	primary key(seq_che)
+);
+	
+
+create table tab_chequedep
+(
+	seq_che char(7) not null,
+	data_dep date not null,
+	cod_con char(3) not null,
+	primary key(seq_che,data_dep)
+);
+ALTER TABLE `tab_cheques` ADD `cpf_che` CHAR(18)  NOT NULL AFTER `nome_che`;
+
+
+ALTER TABLE `tab_cheques` ADD `status_Che` CHAR(1)  DEFAULT "1" NOT NULL AFTER `cod_con`;
+
+create table tab_prodpromo
+(	
+	cod_pro char(8) not null,
+	datafin_pro date not null,
+	primary key(cod_pro)
+);
+ALTER TABLE `tab_tipoven` ADD `tipo_tip` CHAR(1)  DEFAULT "C" NOT NULL
+
+
+create table tab_altpreco(
+	cod_pro char(8) not null,
+	antigo_pro decimal(14,2) not null,
+	novo_pro decimal(14,2) not null,
+	data_alt datetime not null,
+	cod_usu char(3) not null,
+	status_alt char(1) not null default 1,
+	primary key(cod_pro,data_alt)
+);
+	
+create table tab_fotos(
+	cod_pro char(8) not null,
+	foto_fot mediumblob,
+	data_fot datetime not null,
+	cod_usu char(3) not null,
+	primary key(cod_pro)
+);

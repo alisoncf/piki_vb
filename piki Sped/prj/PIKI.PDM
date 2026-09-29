@@ -1,0 +1,437 @@
+[Root]
+Most Recent Package=Piki
+
+
+[Package|Piki Sped 2015|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\executaveis\package
+
+[Package|Piki Sped 2015|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=Yes
+
+[Package|Piki Sped 2015|Configure DAO ODBC]
+JetWorkspace=Yes
+ODBCDirect=Yes
+
+[Package|Piki Sped 2015|Files Found]
+
+[Package|Piki Sped 2015|Files Released]
+CliSitef32I.dll=
+EZTW32.DLL=
+MP20FI32.DLL=
+Daruma32.dll=
+VIC32.DLL=
+Elgin.dll=
+aunzip32.dll=
+azip32.dll=
+
+[Package|Piki Sped 2015|Missing Dependency Information]
+C:\Program Files\BarcodeX\barcodex.ocx=
+C:\Program Files\Common Files\System\ado\msado25.tlb=
+C:\Windows\System32\MSSTDFMT.DLL=
+C:\Windows\System32\BemaFI32.dll=
+C:\Windows\System32\vic32.dll=
+C:\Windows\System32\MSRDO20.DLL=
+C:\Windows\System32\barcodex.ocx=
+\\alison-pc\Users\alison\Dropbox\desenv\piki Sped\prj\mp2032.dll=
+C:\Users\alison\Dropbox\desenv\piki Sped\prj\mp2032.dll=
+
+[Package|Piki Sped 2015|Out-of-Date Dependency Information]
+C:\Windows\System32\comct332.ocx=
+C:\Windows\System32\comdlg32.ocx=
+C:\Windows\System32\MSCOMCTL.OCX=
+C:\Windows\System32\msflxgrd.ocx=
+C:\Windows\System32\MSADODC.OCX=
+C:\Windows\System32\tabctl32.ocx=
+
+[Package|Piki Sped 2015|Files Added]
+
+[Package|Piki Sped 2015|Files Removed]
+c:\windows\system32\vic32.dll=
+
+[Package|Piki Sped 2015|Files In Project]
+C:\Windows\System32\msvbvm60.dll=Yes
+C:\Windows\System32\oleaut32.dll=Yes
+C:\Windows\System32\olepro32.dll=Yes
+C:\Windows\System32\asycfilt.dll=Yes
+C:\Windows\System32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Windows\System32\BemaFI32.dll=Yes
+C:\Windows\System32\MSJET35.DLL=Yes
+C:\Windows\System32\MSJTER35.DLL=Yes
+C:\Windows\System32\MSJINT35.DLL=Yes
+C:\Windows\System32\vbajet32.dll=Yes
+C:\Windows\System32\expsrv.dll=Yes
+C:\Windows\System32\MSRD2X35.DLL=Yes
+C:\Windows\System32\MSREPL35.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\Windows\System32\VB5DB.DLL=Yes
+C:\Windows\System32\DBGRID32.OCX=Yes
+C:\Windows\System32\msflxgrd.ocx=Yes
+C:\Windows\System32\TABCTL32.OCX=Yes
+C:\Windows\System32\MSCOMCTL.OCX=Yes
+C:\Windows\System32\MSCHRT20.OCX=Yes
+C:\Windows\System32\comdlg32.ocx=Yes
+C:\Windows\System32\MSADODC.OCX=Yes
+C:\Windows\System32\MSSTDFMT.DLL=Yes
+C:\Windows\System32\MSDATGRD.OCX=Yes
+C:\Program Files\Common Files\System\ado\msado25.tlb=Yes
+C:\Windows\System32\MSBIND.DLL=Yes
+C:\Windows\System32\MSWINSCK.OCX=Yes
+C:\Windows\System32\comct332.ocx=Yes
+C:\Windows\System32\MSHFLXGD.OCX=Yes
+C:\Windows\System32\MSRDO20.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Windows\System32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Windows\System32\QRCodeLib.dll=Yes
+C:\Windows\System32\MSCOMM32.OCX=Yes
+C:\executaveis\Piki 2015.exe=Yes
+C:\Windows\System32\vic32.dll=No
+C:\Users\alison\Dropbox\desenv\piki Sped\prj\mp2032.dll=Yes
+C:\Windows\System32\DAO350.DLL=Yes
+C:\Program Files\BarcodeX\barcodex.ocx=Yes
+C:\Windows\System32\RDOCURS.DLL=Yes
+
+[Package|Piki Sped 2015|Configure Registry Files]
+Applicable=No
+
+[Package|Piki Sped 2015|Configure Remote Servers]
+Applicable=No
+
+[Package|Piki Sped 2015|Install Locations]
+C:\desenv\piki Sped\exe\Piki 2015.exe=$(AppPath)
+C:\Windows\System32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Windows\System32\oleaut32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\olepro32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\asycfilt.dll=$(WinSysPathSysFile)
+C:\Windows\System32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\BemaFI32.dll=$(WinSysPath)
+C:\Program Files\Common Files\microsoft shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\Windows\System32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\vbajet32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\expsrv.dll=$(WinSysPathSysFile)
+C:\Windows\System32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\VB5DB.DLL=$(WinSysPath)
+C:\Windows\System32\DBGRID32.OCX=$(WinSysPath)
+C:\Windows\System32\msflxgrd.ocx=$(WinSysPath)
+C:\Windows\System32\TABCTL32.OCX=$(WinSysPath)
+C:\Windows\System32\MSCOMCTL.OCX=$(WinSysPath)
+C:\Windows\System32\MSDATLST.OCX=$(WinSysPath)
+C:\Windows\System32\MSCHRT20.OCX=$(WinSysPath)
+C:\Windows\System32\comdlg32.ocx=$(WinSysPath)
+C:\Windows\System32\MSADODC.OCX=$(WinSysPath)
+C:\Windows\System32\MSSTDFMT.DLL=$(WinSysPath)
+C:\Windows\System32\MSDATGRD.OCX=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msado25.tlb=$(WinSysPath)
+C:\Windows\System32\MSBIND.DLL=$(WinSysPath)
+C:\Windows\System32\MSWINSCK.OCX=$(WinSysPath)
+C:\Windows\System32\comct332.ocx=$(WinSysPath)
+C:\Program Files\BarcodeX\barcodex.ocx=$(WinSysPath)
+C:\Windows\System32\MSHFLXGD.OCX=$(WinSysPath)
+C:\Windows\System32\MSRDO20.DLL=$(WinSysPath)
+C:\Windows\System32\RDOCURS.DLL=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Windows\System32\DAO350.DLL=$(MSDAOPath)
+C:\Windows\System32\MSMASK32.OCX=$(WinSysPath)
+\\10.1.1.188\Users\alison\Dropbox\desenv\piki Sped\exe\Piki 2015.exe=$(AppPath)
+C:\Windows\System32\barcodex.ocx=$(WinSysPath)
+C:\Windows\System32\mstext35.dll=$(WinSysPathSysFile)
+C:\Users\alison\Dropbox\desenv\piki Sped\exe\Piki 2015.exe=$(AppPath)
+C:\atlz_pk\Piki 2015.exe=$(AppPath)
+\\alison-pc\Users\alison\Dropbox\desenv\piki Sped\prj\mp2032.dll=$(WinSysPath)
+C:\Windows\System32\QRCodeLib.dll=$(AppPath)
+C:\Windows\System32\MSCOMM32.OCX=$(WinSysPath)
+C:\executaveis\Piki 2015.exe=$(AppPath)
+C:\Users\alison\Dropbox\desenv\piki Sped\prj\mp2032.dll=$(WinSysPath)
+
+[Package|Piki Sped 2015|Configure Shared Files]
+Applicable=Yes
+C:\desenv\piki Sped\exe\Piki 2015.exe=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+\\10.1.1.188\Users\alison\Dropbox\desenv\piki Sped\exe\Piki 2015.exe=Yes
+C:\Users\alison\Dropbox\desenv\piki Sped\exe\Piki 2015.exe=No
+C:\atlz_pk\Piki 2015.exe=No
+C:\Windows\System32\QRCodeLib.dll=Yes
+C:\executaveis\Piki 2015.exe=No
+
+[Package|Piki Sped 2015|Distribution]
+Type=single
+Size=
+Title=Piki Sped 2015
+
+[Package|Piki Sped 2015|IconGroups]
+Group0=Piki Sped 2015
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|Piki Sped 2015|Piki Sped 2015]
+Icon1="Piki 2015.exe"
+Title1=Piki Sped 2015
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Piki Sped 2015|Package]
+PackageFolder=C:\executaveis\package
+ProjectFolder=C:\Users\alison\Dropbox\desenv\piki Sped\prj
+ServerSideCab=
+File1=C:\executaveis\package\setup.exe
+File2=C:\executaveis\package\Setup.Lst
+File3=C:\executaveis\package\Piki 2015.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Piki|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\desenv\Instalador Piki
+
+[Package|Piki|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=Yes
+
+[Package|Piki|Configure DAO ODBC]
+JetWorkspace=Yes
+ODBCDirect=Yes
+
+[Package|Piki|Files Found]
+
+[Package|Piki|Files Released]
+CliSitef32I.dll=
+EZTW32.DLL=
+MP20FI32.DLL=
+Daruma32.dll=
+VIC32.DLL=
+Elgin.dll=
+aunzip32.dll=
+azip32.dll=
+msrdo20.dll=
+3=
+BEMAFI32.DLL=
+
+[Package|Piki|Missing Dependency Information]
+C:\Program Files\BarcodeX\barcodex.ocx=
+C:\Program Files\Common Files\System\ado\msado25.tlb=
+C:\Windows\System32\MSSTDFMT.DLL=
+C:\Windows\System32\BemaFI32.dll=
+C:\Windows\System32\vic32.dll=
+C:\Windows\System32\MSRDO20.DLL=
+C:\Windows\System32\barcodex.ocx=
+\\alison-pc\Users\alison\Dropbox\desenv\piki Sped\prj\mp2032.dll=
+C:\Users\alison\Dropbox\desenv\piki Sped\prj\mp2032.dll=
+C:\Windows\SysWOW64\barcodex.ocx=
+C:\Windows\System32\winhttpcom.dll=
+C:\Windows\SysWOW64\msxml3.dll=
+C:\Program Files (x86)\Common Files\System\ado\msado25.tlb=
+C:\Users\cgpre\Dropbox\desenv\piki Sped\prj\mp2032.dll=
+D:\desenv\requinte\prj\barcodex.ocx=
+C:\Program Files (x86)\EASendMail\Lib\native\x86\EASendMailObj.dll=
+D:\desenv\piki Sped\prj\mp2032.dll=
+
+[Package|Piki|Out-of-Date Dependency Information]
+C:\Windows\System32\comct332.ocx=
+C:\Windows\System32\comdlg32.ocx=
+C:\Windows\System32\MSCOMCTL.OCX=
+C:\Windows\System32\msflxgrd.ocx=
+C:\Windows\System32\MSADODC.OCX=
+C:\Windows\System32\tabctl32.ocx=
+C:\Windows\SysWOW64\COMCT332.OCX=
+C:\Windows\SysWOW64\comdlg32.OCX=
+
+[Package|Piki|Files Added]
+
+[Package|Piki|Files Removed]
+c:\windows\system32\vic32.dll=
+c:\program files (x86)\microsoft visual studio\vb98\wizards\pdwizard\redist\mdac_typ.exe=
+
+[Package|Piki|Files In Project]
+C:\Windows\System32\msvbvm60.dll=Yes
+C:\Windows\System32\oleaut32.dll=Yes
+C:\Windows\System32\olepro32.dll=Yes
+C:\Windows\System32\asycfilt.dll=Yes
+C:\Windows\System32\stdole2.tlb=Yes
+C:\Windows\System32\MSJET35.DLL=Yes
+C:\Windows\System32\MSJTER35.DLL=Yes
+C:\Windows\System32\MSJINT35.DLL=Yes
+C:\Windows\System32\vbajet32.dll=Yes
+C:\Windows\System32\expsrv.dll=Yes
+C:\Windows\System32\MSRD2X35.DLL=Yes
+C:\Windows\System32\MSREPL35.DLL=Yes
+C:\Windows\System32\VB5DB.DLL=Yes
+C:\Windows\System32\VB6STKIT.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files (x86)\Common Files\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\Program Files (x86)\Common Files\System\ado\msado25.tlb=Yes
+C:\Windows\SysWOW64\MSBIND.DLL=Yes
+C:\Windows\SysWOW64\MSSTDFMT.DLL=Yes
+C:\Windows\SysWOW64\msxml3.dll=Yes
+C:\Windows\System32\winhttpcom.dll=Yes
+C:\Windows\SysWOW64\DBGRID32.OCX=Yes
+C:\Windows\SysWOW64\MSFLXGRD.OCX=Yes
+C:\Windows\SysWOW64\TABCTL32.OCX=Yes
+C:\Windows\SysWOW64\MSCHRT20.OCX=Yes
+C:\Windows\SysWOW64\comdlg32.OCX=Yes
+C:\Windows\SysWOW64\MSADODC.OCX=Yes
+C:\Windows\SysWOW64\MSDATGRD.OCX=Yes
+C:\Windows\SysWOW64\MSWINSCK.OCX=Yes
+C:\Windows\SysWOW64\COMCT332.OCX=Yes
+C:\Windows\SysWOW64\MSHFLXGD.OCX=Yes
+C:\Windows\SysWOW64\MSCOMCTL.OCX=Yes
+C:\Windows\SysWOW64\MSCOMM32.OCX=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+D:\desenv\exe\Piki 2020.exe=Yes
+D:\desenv\piki Sped\prj\mp2032.dll=Yes
+D:\desenv\piki Sped\prj\QRCodeLib.dll=Yes
+C:\Program Files (x86)\EASendMail\Lib\native\x86\EASendMailObj.dll=Yes
+D:\desenv\requinte\prj\barcodex.ocx=Yes
+
+[Package|Piki|Configure Registry Files]
+Applicable=No
+
+[Package|Piki|Configure Remote Servers]
+Applicable=No
+
+[Package|Piki|Install Locations]
+C:\desenv\piki Sped\exe\Piki 2015.exe=$(AppPath)
+C:\Windows\System32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Windows\System32\oleaut32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\olepro32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\asycfilt.dll=$(WinSysPathSysFile)
+C:\Windows\System32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\BemaFI32.dll=$(WinSysPath)
+C:\Program Files\Common Files\microsoft shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\Windows\System32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\vbajet32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\expsrv.dll=$(WinSysPathSysFile)
+C:\Windows\System32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\VB5DB.DLL=$(WinSysPath)
+C:\Windows\System32\DBGRID32.OCX=$(WinSysPath)
+C:\Windows\System32\msflxgrd.ocx=$(WinSysPath)
+C:\Windows\System32\TABCTL32.OCX=$(WinSysPath)
+C:\Windows\System32\MSCOMCTL.OCX=$(WinSysPath)
+C:\Windows\System32\MSDATLST.OCX=$(WinSysPath)
+C:\Windows\System32\MSCHRT20.OCX=$(WinSysPath)
+C:\Windows\System32\comdlg32.ocx=$(WinSysPath)
+C:\Windows\System32\MSADODC.OCX=$(WinSysPath)
+C:\Windows\System32\MSSTDFMT.DLL=$(WinSysPath)
+C:\Windows\System32\MSDATGRD.OCX=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msado25.tlb=$(WinSysPath)
+C:\Windows\System32\MSBIND.DLL=$(WinSysPath)
+C:\Windows\System32\MSWINSCK.OCX=$(WinSysPath)
+C:\Windows\System32\comct332.ocx=$(WinSysPath)
+C:\Program Files\BarcodeX\barcodex.ocx=$(WinSysPath)
+C:\Windows\System32\MSHFLXGD.OCX=$(WinSysPath)
+C:\Windows\System32\MSRDO20.DLL=$(WinSysPath)
+C:\Windows\System32\RDOCURS.DLL=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Windows\System32\DAO350.DLL=$(MSDAOPath)
+C:\Windows\System32\MSMASK32.OCX=$(WinSysPath)
+\\10.1.1.188\Users\alison\Dropbox\desenv\piki Sped\exe\Piki 2015.exe=$(AppPath)
+C:\Windows\System32\barcodex.ocx=$(WinSysPath)
+C:\Windows\System32\mstext35.dll=$(WinSysPathSysFile)
+C:\Users\alison\Dropbox\desenv\piki Sped\exe\Piki 2015.exe=$(AppPath)
+C:\atlz_pk\Piki 2015.exe=$(AppPath)
+\\alison-pc\Users\alison\Dropbox\desenv\piki Sped\prj\mp2032.dll=$(WinSysPath)
+C:\Windows\System32\QRCodeLib.dll=$(AppPath)
+C:\Windows\System32\MSCOMM32.OCX=$(WinSysPath)
+C:\executaveis\Piki 2015.exe=$(AppPath)
+C:\Users\alison\Dropbox\desenv\piki Sped\prj\mp2032.dll=$(WinSysPath)
+C:\desenv\exe\Piki 2020.exe=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Users\cgpre\Dropbox\desenv\piki Sped\prj\mp2032.dll=$(WinSysPath)
+C:\tmp\QRCodeLib.dll=$(AppPath)
+C:\Program Files (x86)\Common Files\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\Program Files (x86)\Common Files\System\ado\msado25.tlb=$(WinSysPath)
+C:\Windows\SysWOW64\MSBIND.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\MSSTDFMT.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\msxml3.dll=$(WinSysPath)
+C:\Windows\System32\winhttpcom.dll=$(WinSysPath)
+C:\Windows\SysWOW64\DBGRID32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSFLXGRD.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\TABCTL32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCHRT20.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\comdlg32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSADODC.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSDATGRD.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSWINSCK.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\COMCT332.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSHFLXGD.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\barcodex.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMCTL.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMM32.OCX=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+D:\desenv\exe\Piki 2020.exe=$(AppPath)
+D:\desenv\piki Sped\prj\mp2032.dll=$(WinSysPath)
+D:\desenv\piki Sped\prj\QRCodeLib.dll=$(AppPath)
+C:\Program Files (x86)\EASendMail\Lib\native\x86\EASendMailObj.dll=$(WinSysPath)
+D:\desenv\requinte\prj\barcodex.ocx=$(WinSysPath)
+
+[Package|Piki|Configure Shared Files]
+Applicable=Yes
+C:\desenv\piki Sped\exe\Piki 2015.exe=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+\\10.1.1.188\Users\alison\Dropbox\desenv\piki Sped\exe\Piki 2015.exe=Yes
+C:\Users\alison\Dropbox\desenv\piki Sped\exe\Piki 2015.exe=No
+C:\atlz_pk\Piki 2015.exe=No
+C:\Windows\System32\QRCodeLib.dll=Yes
+C:\executaveis\Piki 2015.exe=No
+C:\desenv\exe\Piki 2020.exe=Yes
+C:\tmp\QRCodeLib.dll=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+D:\desenv\exe\Piki 2020.exe=Yes
+D:\desenv\piki Sped\prj\QRCodeLib.dll=Yes
+
+[Package|Piki|Distribution]
+Type=single
+Size=
+Title=Piki
+
+[Package|Piki|IconGroups]
+Group0=Piki
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|Piki|Piki]
+Icon1="Piki 2015.exe"
+Title1=Piki 2023
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Piki|Package]
+PackageFolder=C:\desenv\Instalador Piki
+ProjectFolder=D:\desenv\piki Sped\prj
+ServerSideCab=
+File1=C:\desenv\Instalador Piki\setup.exe
+File2=C:\desenv\Instalador Piki\Setup.Lst
+File3=C:\desenv\Instalador Piki\Piki 2020.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

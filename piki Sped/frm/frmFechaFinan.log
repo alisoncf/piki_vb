@@ -1,0 +1,11 @@
+Line 68: Class TabDlg.SSTab of control SSTab1 was not a loaded control class.
+Line 184: Class MSAdodcLib.Adodc of control adc was not a loaded control class.
+Line 231: Class MSDataGridLib.DataGrid of control dbgrd was not a loaded control class.
+Line 300: Class MSAdodcLib.Adodc of control adcgerado was not a loaded control class.
+Line 347: Class MSDataGridLib.DataGrid of control gridGerado was not a loaded control class.
+Line 416: Class MSAdodcLib.Adodc of control adcMov was not a loaded control class.
+Line 463: Class MSDataGridLib.DataGrid of control gridMov was not a loaded control class.
+Line 532: Class MSAdodcLib.Adodc of control adcChequeBx was not a loaded control class.
+Line 579: Class MSDataGridLib.DataGrid of control gridChequeBaix was not a loaded control class.
+Line 648: Class MSAdodcLib.Adodc of control adcChGer was not a loaded control class.
+Line 695: Class MSDataGridLib.DataGrid of control gridChGera was not a loaded control class.

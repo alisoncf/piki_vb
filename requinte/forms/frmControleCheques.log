@@ -1,0 +1,6 @@
+Line 354: Class MSDBGrid.DBGrid of control dbgrdChe was not a loaded control class.
+Line 363: Class MSDBGrid.DBGrid of control dbgrdChePag was not a loaded control class.
+Line 355: The property name Bindings in dbgrdChe is invalid.
+Line 358: The property name OleObjectBlob in dbgrdChe is invalid.
+Line 364: The property name Bindings in dbgrdChePag is invalid.
+Line 367: The property name OleObjectBlob in dbgrdChePag is invalid.

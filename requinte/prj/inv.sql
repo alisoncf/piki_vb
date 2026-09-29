@@ -1,0 +1,1 @@
+﻿select distinct ti.seq_not,ti.seq_ite,ti.cod_pro,ti.custo_ite,tp.cr_pro,tp.pv_pro,status_not, (ti.qtd_ite) as total from tab_compras as tc  inner join tab_itcompras as ti on tc.seq_not=ti.seq_not  inner join tab_produtos as tp on tp.cod_pro=ti.cod_pro and status_not in (2,3,4) where tc.emissao_not>='2025-01-01' and tc.emissao_not<='2025-12-31'order by cod_pro

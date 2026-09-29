@@ -1,0 +1,210 @@
+
+Form=frmVinculaDoc.frm
+Form=frmTeste.frm
+Form=frmResumoContasPagar.frm
+Form=frmRelVendasImpostos.frm
+Form=frmCadCliRapido.frm
+Form=forms\frmRelBaixaItd.frm
+Form=frmCaixas.frm
+Form=frmRelReceitasDespesas.frm
+Reference=*\G{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}#1.0#0#..\..\WINDOWS\system32\msdatsrc.tlb#Microsoft Data Source Interfaces
+Module=Clientes; modulos\Clientes.bas
+Module=subsecAO; modulos\subsecao.bas
+Module=Controles; modulos\Controles.bas
+Module=lpt; modulos\lpt.bas
+Form=forms\frmCadUmCampo.frm
+Form=forms\frmEdiUmCampo.frm
+Module=Principio; modulos\Principio.bas
+Module=Secao; modulos\Secao.bas
+Form=forms\frmCadSubSec.frm
+Form=forms\frmEdiSubCat.frm
+Module=Imposto; modulos\Imposto.bas
+Form=frmCadImp.frm
+Module=convenio; modulos\convenio.bas
+Module=Conveniado; modulos\Conveniado.bas
+Form=frmCaixaLivre.frm
+Form=forms\frmCadEti.frm
+Form=frmSelect.frm
+Module=doc; modulos\doc.bas
+Module=Fornecedor; modulos\Fornecedor.bas
+Module=Financeiro; modulos\Financeiro.bas
+Form=forms\frmDadosCartao.frm
+Module=Funcionario; modulos\Funcionario.bas
+Form=forms\frmListaPermanente.frm
+Form=forms\frmListaProdVendidos.frm
+Form=forms\frmHistCli.frm
+Form=forms\frmHistProd.frm
+Module=Setores; modulos\Setores.bas
+Object={86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0; MSCOMCT2.OCX
+Module=Representante; modulos\Representante.bas
+Form=forms\frmEdiClientes.frm
+Form=forms\frmCadCli.frm
+Form=forms\frmGravaFoto.frm
+Module=Elgin; modulos\Elgin.bas
+Module=Modulo; modulos\Modulo.bas
+Module=Produtos; modulos\Produtos.bas
+Module=Global; modulos\Global.bas
+Module=html; modulos\html.bas
+Module=tef; modulos\tef.bas
+Module=Relatorios; modulos\relatorios.bas
+Module=ImpressoraECF; modulos\ImpressoraECF.bas
+Module=codbarra; modulos\codbarra.bas
+Form=forms\frmBuscaBairro.frm
+Module=Cidades; modulos\Cidades.bas
+Form=forms\frmEdiCid.frm
+Module=Consignado; modulos\Consignado.bas
+Form=forms\frmedirep.frm
+Form=forms\frmLanCheque.frm
+Module=Bancos; modulos\Bancos.bas
+Object={8E515444-86DF-11D3-A630-444553540001}#1.0#0; barcodex.ocx
+Object={827E9F53-96A4-11CF-823E-000021570103}#1.0#0; graphs32.ocx
+Object={97304F10-8DA9-11D1-8C48-0080C83EC00F}#1.0#0; Graphdtc.ocx
+Form=forms\frmAcertos.frm
+Form=forms\frmListaDevConsign.frm
+Form=forms\frmLanCont.frm
+Module=Etiqueta; modulos\Etiqueta.bas
+Form=forms\frmEdiEti.frm
+Form=forms\frmCadFab.frm
+Object={0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0; MSHFLXGD.OCX
+Module=DevConsign; modulos\DevConsign.bas
+Form=forms\frmDevolucaoConsign.frm
+Form=forms\frmTransfConsign.frm
+Form=forms\frmMigraConsignado.frm
+Form=forms\frmPacote.frm
+Form=forms\frmCadSetor.frm
+Module=Permissao; modulos\Permissao.bas
+Form=forms\frmEdiSet.frm
+Form=forms\frmInfoVendas.frm
+Form=frmPendenciaCrediario.frm
+Module=Cobranca; modulos\Cobranca.bas
+Form=forms\frmTransfereCarn.frm
+Form=forms\frmEntradas.frm
+Form=forms\frmCrediario.frm
+Form=forms\frmVendaCartao.frm
+Form=forms\frmComissParc.frm
+Form=forms\frmMesclarClientes.frm
+Form=frmPermissoes.frm
+Form=frmAddPerm.frm
+Form=frmQueima.frm
+Form=forms\frmContrato.frm
+Form=forms\frmClausula.frm
+Form=forms\frmEdiContratos.frm
+Form=forms\frmResumoConsign.frm
+Form=forms\frmReposicao.frm
+Module=Reposicao; modulos\Reposicao.bas
+Form=forms\frmEditaMov.frm
+Form=forms\frmEdiReposicao.frm
+Form=forms\frmVisualiza.frm
+Form=forms\frmLanDoc.frm
+Module=Cheques; modulos\Cheque.bas
+Module=Acerto; modulos\Acerto.bas
+Module=Preenche; modulos\Preenche.bas
+Module=Vendas; modulos\Vendas.bas
+Module=Impressao; modulos\Impressao.bas
+Module=ECF; modulos\ECF.bas
+Module=daruma; modulos\daruma.bas
+Form=forms\frmGeraEtiquetas.frm
+Module=FormasPag; modulos\FormasPag.bas
+Module=Financeira; modulos\Financeira.bas
+Module=Pacote; modulos\Pacote.bas
+Form=forms\frmTroco.frm
+Form=forms\frmVenda.frm
+Form=forms\frmCadRep.frm
+Form=forms\frmEdiVendas.frm
+Form=forms\frmCobranca.frm
+Form=forms\frmProdutoSaida.frm
+Form=forms\frmCadBan.frm
+Form=forms\frmControleCheques.frm
+Form=forms\frmParcelasTer.frm
+Form=forms\frmLanFin.frm
+Form=forms\frmBaixaDocRec2.print_downloadfonts", false);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_edge_bottom", 0);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_edge_left", 0);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_edge_right", 0);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_edge_top", 0);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_evenpages", true);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_footercenter", "");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_footerleft", "&PT");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_footerright", "&D");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_headercenter", "");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_headerleft", "&T");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_headerright", "&U");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_in_color", true);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_margin_bottom", "0.5");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_margin_left", "0.5");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_margin_right", "0.5");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_margin_top", "0.5");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_oddpages", true);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_orientation", 0);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_pagedelay", 500);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_paper_data", 9);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_paper_height", " 11,00");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_paper_size", 0);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_paper_size_type", 0);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_paper_size_unit", 1);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_paper_width", "  8,50");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_reversed", false);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_scaling", "  1,00");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_shrink_to_fit", true);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_to_file", false);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_to_filename", "");
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_unwriteable_margin_bottom", 0);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_unwriteable_margin_left", 0);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_unwriteable_margin_right", 0);
+user_pref("print.printer_\\\\XPERT01\\hp_LaserJet_1010_Series_Driver.print_unwriteable_margin_top", 0);
+user_pref("privacy.item.offlineApps", true);
+user_pref("privacy.sanitize.didShutdownSanitize", true);
+user_pref("privacy.sanitize.sanitizeOnShutdown", true);
+user_pref("security.enable_ssl2", true);
+user_pref("security.enable_tls", false);
+user_pref("security.warn_viewing_mixed", false);
+user_pref("urlclassifier.keyupdatetime.https://sb-ssl.google.com/safebrowsing/getkey?client=navclient-auto-ffox2.0&", 1203600346);
+user_pref("urlclassifier.keyupdatetime.https://sb-ssl.google.com/safebrowsing/newkey", 1227704658);
+user_pref("urlclassifier.tableversion.goog-black-enchash", "1.58237");
+user_pref("urlclassifier.tableversion.goog-black-url", "1.24317");
+user_pref("urlclassifier.tableversion.goog-white-domain", "1.481");
+user_pref("urlclassifier.tableversion.goog-white-url", "1.371");
+user_pref("xpinstall.whitelist.add", "");
+user_pref("xpinstall.whitelist.add.103", "");
+                                                                                                                                                                                                                                                                                                                                                                                              Ÿ$ ⁄$ €$  Ä! ‹$ ›$ ﬁ$    ‡ · obj    ﬂ Me    ‚ unnamed_var1    „ unnamed_var1    ‰ unnamed_var1    Â unnamed_var1    Ê unnamed_var1    Á unnamed_var1    Ë unnamed_var1    È unnamed_var1    Í unnamed_var1    Î unnamed_var1    Ï unnamed_var1    Ì unnamed_var1    Ó unnamed_var1    Ô unnamed_var1     unnamed_var1    Ò unnamed_var1    Ú unnamed_var1    Û unnamed_var1    Ù unnamed_var1    ı unnamed_var1    ˆ unnamed_var1    ˜ unnamed_var1    ¯ unnamed_var1    ˘ unnamed_var1    ˙ unnamed_var1    ˚ unnamed_var1    ¸ unnamed_var1    ˝ unnamed_var1    ˛ unnamed_var1    ˇ unnamed_var1      unnamed_var1     unnamed_var1     unnamed_var1     unnamed_var1     unnamed_var1     unnamed_var1     unnamed_var1     unnamed_var1     unnamed_var1    	$   Å   $ $ $ $  Ä! $    $    $    $    $    $    $ $  $ %$ ($    )$    +$    ,$ 6$    7$ ; < obj    : Me    = unnamed_var1    > unnamed_var1    ? unnamed_var1    @ unnamed_var1    A unnamed_var1    B unnamed_var1    C unnamed_var1    D unnamed_var1    E unnamed_var1    F unnamed_var1    G unnamed_var1    H unnamed_var1    I unnamed_var1    J unnamed_var1    K unnamed_var1    L unnamed_var1    M unnamed_var1    N unnamed_var1    O unnamed_var1    P$   Å   R$ S$ T$ U$  Ä! W$    X$ Y$ Z$ [$    \$    ]$ ^$ ` _ Me    a unnamed_var1    b unnamed_var1    c unnamed_var1    d$   Å   f$ g$ h$  Ä! j i Me    k unnamed_var1    l unnamed_var1    m unnamed_var1    n unnamed_var1    o unnamed_var1    p$   Å   r$ s$ t$  Ä! w v Me    x strSQL    y rPesq    z unnamed_var1    { unnamed_var1    | unnamed_var1    } unnamed_var1    ~ unnamed_var1     unnamed_var1    Ä unnamed_var1    Å unnamed_var1    Ç unnamed_var1    É unnamed_var1    Ñ unnamed_var1    Ö unnamed_var1    Ü unnamed_var1    á unnamed_var1    à unnamed_var1    â unnamed_var1    ä unnamed_var1    ã unnamed_var1    å unnamed_var1    ç unnamed_var1    é unnamed_var1    è unnamed_var1    ê unnamed_var1    ë unnamed_var1    í$   Å   î$ ï$ ñ$ ó$  Ä! ö$    õ$    ù$    û$    ü$ °$ £ § Shift    • KeyCode    ¢ Me    ¶ unnamed_var1    ß unnamed_var1    ® unnamed_var1    © unnamed_var1    ™$   Å   ≠$ Æ$  Ä! Ø$ ∞$ ±$ ≤$ ≥$ ¥$ µ$  ¨$   Ä! ∑ ∂ Me    ∏ unnamed_var1  ˛˛ b ∞ d ƒ         ˇ                        ˇˇˇˇˇˇˇˇ                                                 ¯            ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ        I$/R           I$/R                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  End
+      Begin VB.Label lblTabelas 
+         Caption         =   "Tabelas"
+         Height          =   255
+         Left            =   1200
+         TabIndex        =   7
+         Top             =   120
+         Width           =   735
+      End
+      Begin VB.Label Label3 
+         AutoSize        =   -1  'True
+         Caption         =   "Tabelas:"
+         Height          =   195
+         Left            =   120
+         TabIndex        =   6
+         Top             =   120
+         Width           =   615
+      End
+   End
+   Begin VB.CommandButton cmndbtnReplicar 
+      Caption         =   "Replicar"
+      Height          =   495
+      Left            =   120
+      TabIndex        =   4
+      Top             =   2280
+      Width           =   1935
+   End
+   Begin VB.TextBox txtbxBancoReplica 
+      Height          =   375
+      Left            =   120
+      TabIndex        =   3
+      Text            =   "Market_rep"
+      Top             =   1680
+      Width           =   1935
+   End
+   Begin VB.Label Label1 
+      Caption         =   "Para o Banco de Dados:"
+      Height          =   255
+      Left            =   120
+      TabIndex        =   2
+      Top            

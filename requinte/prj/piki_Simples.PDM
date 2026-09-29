@@ -1,0 +1,210 @@
+[Root]
+Most Recent Package=Instalação Piki Express
+
+
+[Package|Instalação Piki Express|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\desenv\requinte\prj\Package
+
+[Package|Instalação Piki Express|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=Yes
+
+[Package|Instalação Piki Express|Configure DAO ODBC]
+JetWorkspace=Yes
+ODBCDirect=Yes
+
+[Package|Instalação Piki Express|Files Found]
+QRCodeLib.dll=C:\Users\cgpre\Dropbox\utilitarios\QRCodeLib.dll
+
+[Package|Instalação Piki Express|Files Released]
+Daruma32.dll=
+MP20FI32.DLL=
+Elgin.dll=
+BEMAFI32.DLL=
+EZTW32.DLL=
+msrdo20.dll=
+MP2032.DLL=
+aunzip32.dll=
+azip32.dll=
+
+[Package|Instalação Piki Express|Missing Dependency Information]
+C:\Windows\System32\MSRDO20.DLL=
+C:\Arquivos de programas\BarcodeX\barcodex.ocx=
+C:\Program Files (x86)\BarcodeX\barcodex.ocx=
+C:\Program Files (x86)\Common Files\system\ado\msado28.tlb=
+
+[Package|Instalação Piki Express|Out-of-Date Dependency Information]
+C:\Windows\System32\mscomct2.ocx=
+C:\Windows\System32\comct332.ocx=
+C:\Windows\System32\comdlg32.ocx=
+C:\Windows\System32\MSCOMCTL.OCX=
+C:\WINDOWS\system32\TABCTL32.OCX=
+C:\WINDOWS\system32\msflxgrd.ocx=
+C:\WINDOWS\system32\MSSTDFMT.DLL=
+C:\Windows\SysWOW64\COMCT332.OCX=
+C:\Windows\SysWOW64\comdlg32.OCX=
+
+[Package|Instalação Piki Express|Files Added]
+
+[Package|Instalação Piki Express|Files Removed]
+c:\program files (x86)\microsoft visual studio\vb98\wizards\pdwizard\redist\mdac_typ.exe=
+
+[Package|Instalação Piki Express|Files In Project]
+C:\Windows\System32\msvbvm60.dll=Yes
+C:\Windows\System32\oleaut32.dll=Yes
+C:\Windows\System32\olepro32.dll=Yes
+C:\Windows\System32\asycfilt.dll=Yes
+C:\Windows\System32\stdole2.tlb=Yes
+C:\Windows\System32\MSJET35.DLL=Yes
+C:\Windows\System32\MSJTER35.DLL=Yes
+C:\Windows\System32\MSJINT35.DLL=Yes
+C:\Windows\System32\vbajet32.dll=Yes
+C:\Windows\System32\expsrv.dll=Yes
+C:\Windows\System32\MSRD2X35.DLL=Yes
+C:\Windows\System32\MSREPL35.DLL=Yes
+C:\Windows\System32\VB5DB.DLL=Yes
+C:\Windows\System32\VB6STKIT.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Users\cgpre\Dropbox\utilitarios\QRCodeLib.dll=Yes
+C:\Program Files (x86)\Common Files\microsoft shared\DAO\DAO350.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\Windows\SysWOW64\MSBIND.DLL=Yes
+C:\Windows\SysWOW64\MSSTDFMT.DLL=Yes
+C:\Program Files (x86)\Common Files\system\ado\msado28.tlb=Yes
+C:\Windows\SysWOW64\DBGRID32.OCX=Yes
+C:\Windows\SysWOW64\MSFLXGRD.OCX=Yes
+C:\Windows\SysWOW64\TABCTL32.OCX=Yes
+C:\Windows\SysWOW64\MSCOMCTL.OCX=Yes
+C:\Windows\SysWOW64\MSCHRT20.OCX=Yes
+C:\Windows\SysWOW64\COMDLG32.OCX=Yes
+C:\Windows\SysWOW64\MSADODC.OCX=Yes
+C:\Windows\SysWOW64\MSDATGRD.OCX=Yes
+C:\Windows\SysWOW64\MSWINSCK.OCX=Yes
+C:\Windows\SysWOW64\COMCT332.OCX=Yes
+C:\Windows\SysWOW64\MSHFLXGD.OCX=Yes
+C:\Program Files (x86)\BarcodeX\barcodex.ocx=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\desenv\exe\Piki_2018.exe=Yes
+
+[Package|Instalação Piki Express|Configure Registry Files]
+Applicable=No
+
+[Package|Instalação Piki Express|Configure Remote Servers]
+Applicable=No
+
+[Package|Instalação Piki Express|Install Locations]
+C:\desenv\requinte\Piki_2011.exe=$(AppPath)
+C:\Windows\System32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Windows\System32\oleaut32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\olepro32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\asycfilt.dll=$(WinSysPathSysFile)
+C:\Windows\System32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Arquivos de Programas\Arquivos comuns\System\ado\msado25.tlb=$(WinSysPath)
+C:\Program Files\Common Files\microsoft shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\Windows\System32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\vbajet32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\expsrv.dll=$(WinSysPathSysFile)
+C:\Windows\System32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\VB5DB.DLL=$(WinSysPath)
+C:\Windows\System32\DBGRID32.OCX=$(WinSysPath)
+C:\Windows\System32\MSFLXGRD.OCX=$(WinSysPath)
+C:\Windows\System32\TABCTL32.OCX=$(WinSysPath)
+C:\Windows\System32\MSCOMCTL.OCX=$(WinSysPath)
+C:\Windows\System32\MSDATLST.OCX=$(WinSysPath)
+C:\Windows\System32\MSCHRT20.OCX=$(WinSysPath)
+C:\Windows\System32\comdlg32.ocx=$(WinSysPath)
+C:\Windows\System32\MSADODC.OCX=$(WinSysPath)
+C:\Windows\System32\MSSTDFMT.DLL=$(WinSysPath)
+C:\Windows\System32\MSDATGRD.OCX=$(WinSysPath)
+C:\Windows\System32\MSWINSCK.OCX=$(WinSysPath)
+C:\Windows\System32\comct332.ocx=$(WinSysPath)
+C:\Windows\System32\mscomct2.ocx=$(WinSysPath)
+C:\Windows\System32\MSHFLXGD.OCX=$(WinSysPath)
+C:\Windows\System32\barcodex.ocx=$(WinSysPath)
+C:\Windows\System32\MSBIND.DLL=$(WinSysPath)
+C:\Windows\System32\MSRDO20.DLL=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Arquivos comuns\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\BarcodeX\barcodex.ocx=$(WinSysPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Users\cgpre\Dropbox\desenv\requinte\exe\Piki_2018.exe=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Users\cgpre\Dropbox\utilitarios\QRCodeLib.dll=$(AppPath)
+C:\Program Files (x86)\Common Files\microsoft shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\Windows\SysWOW64\MSBIND.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\MSSTDFMT.DLL=$(WinSysPath)
+C:\Program Files (x86)\Common Files\system\ado\msado28.tlb=$(WinSysPath)
+C:\Windows\SysWOW64\DBGRID32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSFLXGRD.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\TABCTL32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMCTL.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCHRT20.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\COMDLG32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSADODC.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSDATGRD.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSWINSCK.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\COMCT332.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSHFLXGD.OCX=$(WinSysPath)
+C:\Program Files (x86)\BarcodeX\barcodex.ocx=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Users\cgpre\Dropbox\desenv\piki Sped\exe\Piki_2018.exe=$(AppPath)
+C:\desenv\exe\Piki_2018.exe=$(AppPath)
+
+[Package|Instalação Piki Express|Configure Shared Files]
+Applicable=Yes
+C:\desenv\requinte\Piki_2011.exe=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Users\cgpre\Dropbox\desenv\requinte\exe\Piki_2018.exe=Yes
+C:\Users\cgpre\Dropbox\utilitarios\QRCodeLib.dll=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Users\cgpre\Dropbox\desenv\piki Sped\exe\Piki_2018.exe=Yes
+C:\desenv\exe\Piki_2018.exe=No
+
+[Package|Instalação Piki Express|Distribution]
+Type=single
+Size=
+Title=Piki Express
+
+[Package|Instalação Piki Express|Package]
+PackageFolder=C:\desenv\requinte\prj\Package
+ProjectFolder=C:\Users\cgpre\Dropbox\desenv\requinte\prj
+ServerSideCab=
+File1=C:\desenv\requinte\prj\Package\setup.exe
+File2=C:\desenv\requinte\prj\Package\Setup.Lst
+File3=C:\desenv\requinte\prj\Package\Piki_2018.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Instalação Piki Express|IconGroups]
+Group0=Piki Express
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|Instalação Piki Express|Piki Express]
+Icon1=Piki_2011.exe
+Title1=Piki Express
+StartIn1=$(AppPath)
+Key1=Icon1

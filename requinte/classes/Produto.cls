@@ -1,0 +1,60 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "ProdutoClass"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+' Produto.cls
+Public cod_pro As String
+Public codbar_pro As String
+Public codbarra_pro As String
+Public nome_pro As String
+Public ref_pro As String
+Public pv_pro As Currency
+Public pp_pro As Currency
+Public prom_pro As String
+Public cod_sec As String
+Public nome_sec As String
+Public nome_sub As String
+Public er_pro As String
+Public ef_pro As String
+
+
+
+Public cr_pro As Currency
+Public cf_pro As Currency
+Public cm_pro As Currency
+Public cod_sub As String
+Public s_pro As String
+Public lucro_pro As Currency
+Public endereco_pro As String
+Public icms As Currency
+Public ecf_icms As String
+Public fracionado_pro As String
+Public complemento_pro As String
+Public pfab_pro As Currency
+Public nome_fab As String
+Public cod_fab As String
+Public bonificado_pro As String
+Public pa_pro As Currency
+Public pq_pro As Currency
+Public ean_pro As String
+Public cb_pro As Currency
+Public ncm_pro As String
+Public cfop_pro As String
+Public unidade_pro As String
+Public cst_pis As String
+Public cst_cofins As String
+Public CST_IPI As String
+Public cst_icms As String
+Public cod_ori As String
+Public cfop_revenda As String
+Public cst_revenda As String
+

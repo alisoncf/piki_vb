@@ -1,0 +1,14 @@
+Line 31: Class MSComctlLib.TabStrip of control tbst was not a loaded control class.
+Line 205: Class MSComDlg.CommonDialog of control cmndlg was not a loaded control class.
+Line 212: Class MSWinsockLib.Winsock of control Winsock1 was not a loaded control class.
+Line 37: The property name _ExtentX in tbst is invalid.
+Line 38: The property name _ExtentY in tbst is invalid.
+Line 39: The property name Style in tbst is invalid.
+Line 40: The property name _Version in tbst is invalid.
+Line 46: The property name Tabs in tbst is invalid.
+Line 208: The property name _ExtentX in cmndlg is invalid.
+Line 209: The property name _ExtentY in cmndlg is invalid.
+Line 210: The property name _Version in cmndlg is invalid.
+Line 215: The property name _ExtentX in Winsock1 is invalid.
+Line 216: The property name _ExtentY in Winsock1 is invalid.
+Line 217: The property name _Version in Winsock1 is invalid.

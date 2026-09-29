@@ -1,0 +1,130 @@
+--migrar dados para banco de dados único requinte
+--1
+CREATE TABLE doc SELECT * FROM tab_doc;
+ALTER TABLE `doc` 	ENGINE=MyISAM;
+
+ALTER TABLE `doc` 
+	ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT FIRST,
+	ADD PRIMARY KEY (`id`);
+ALTER TABLE `doc`
+	ADD COLUMN `cod_emp` char(2) NOT NULL DEFAULT '01' AFTER `cod_pla`;
+
+--2
+CREATE TABLE itdoc SELECT * FROM tab_itdoc;
+ALTER TABLE `itdoc` 	ENGINE=MyISAM;
+ALTER TABLE `itdoc` 
+	ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT FIRST,
+	ADD PRIMARY KEY (`id`);
+ALTER TABLE `itdoc` 
+	ADD COLUMN `id_doc` INT references doc(id);
+SELECT CONCAT('update itdoc set id_doc=',id, ' where seq_doc=',seq_doc,';') FROM doc ORDER BY id DESC;
+
+
+
+
+UPDATE itdoc AS v SET id_doc = (SELECT id FROM doc where seq_doc=v.seq_doc)
+
+
+--3
+CREATE TABLE dochist SELECT * FROM tab_dochist;
+ALTER TABLE `dochist` 	ENGINE=MyISAM;
+ALTER TABLE `dochist` 
+	ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT FIRST,
+	ADD PRIMARY KEY (`id`);
+	ALTER TABLE `dochist` 
+	ADD COLUMN `id_doc` INT references doc(id);
+
+SELECT CONCAT('update dochist set id_doc=',id, ' where seq_doc=',seq_doc,';') FROM doc ORDER BY id DESC;
+--4
+
+ALTER TABLE `doc`
+	CHANGE COLUMN `seq_doc` `seq_doc` CHAR(9) NOT NULL;
+
+
+
+--5
+create table itdocpre select * from tab_itdocpre
+
+ALTER TABLE `itdocpre` 
+	ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT FIRST,
+	ADD PRIMARY KEY (`id`);
+ALTER TABLE `itdocpre` 
+	ADD COLUMN `id_itdoc` INT references itdoc(id);
+SELECT CONCAT('update itdocpre set id_itdoc=',id, ' where seq_itd=',seq_itd,';') FROM itdoc ORDER BY id DESC;
+
+
+
+--6
+CREATE TABLE clientes SELECT * FROM tab_clientes;
+ALTER TABLE `clientes` 	ENGINE=MyISAM;
+ALTER TABLE `clientes` 
+	ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT FIRST,
+	ADD PRIMARY KEY (`id`);
+ALTER TABLE `clientes`
+	ADD COLUMN `cod_emp` char(2) NOT NULL DEFAULT '01';
+
+--7 
+CREATE TABLE vendas SELECT * FROM tab_vendas;
+ALTER TABLE `vendas` 	ENGINE=MyISAM;
+ALTER TABLE `vendas` 
+	ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT FIRST,
+	ADD PRIMARY KEY (`id`);
+ALTER TABLE `vendas`
+	ADD COLUMN `cod_emp` char(2) NOT NULL DEFAULT '01';
+ALTER TABLE `vendas`
+	ADD COLUMN `id_cliente` integer references clientes(id);
+	
+UPDATE vendas AS v SET id_cliente = (SELECT id FROM clientes AS c WHERE c.cod_cli=v.cod_cli ) where id_cliente is null LIMIT 100;
+
+--8
+CREATE TABLE financeiro SELECT * FROM tab_financeiro;
+ALTER TABLE `financeiro` 	ENGINE=MyISAM;
+ALTER TABLE `financeiro` 
+	ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT FIRST,
+	ADD PRIMARY KEY (`id`);
+--9
+
+alter table venfin change column num_ven num_ven char(9) not null;
+
+--9
+create table caixa select * from tab_caixa;
+ALTER TABLE `caixa` 	ENGINE=MyISAM;
+ALTER TABLE `caixa` 
+	ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT FIRST,
+	ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `caixa` 
+	change COLUMN `seq_cai` seq_cai CHAR(9) NOT null;
+
+
+
+--10
+
+
+-- Copiando estrutura para tabela estoque_teste.estoque
+CREATE TABLE IF NOT EXISTS `estoque` (
+  `cod_emp` char(2) NOT NULL,
+  `cod_pro` char(8) NOT NULL,
+  `er` double(14,2) NOT NULL,
+  `ef` double(14,2) NOT NULL,
+  `reservado` double(14,2) NOT NULL DEFAULT '0.00',
+  `cst_icms` char(3) DEFAULT NULL,
+  `cst_ipi` char(2) DEFAULT NULL,
+  `cst_pis` char(2) DEFAULT NULL,
+  `picms` double NOT NULL DEFAULT '0',
+  `predicms` double NOT NULL DEFAULT '0',
+  `cst_cofins` char(2) DEFAULT NULL,
+  `cst_icms_revenda` char(3) DEFAULT NULL,
+  `cst_icms_consumidor` char(3) DEFAULT NULL,
+  `cfop_revenda` char(4) DEFAULT '5102',
+  `cfop_consumidor` char(4) DEFAULT '5102',
+  `ppis` double(14,2) NOT NULL DEFAULT '0.00',
+  `pcofins` double(14,2) NOT NULL DEFAULT '0.00',
+  PRIMARY KEY (`cod_emp`,`cod_pro`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+create table requintebd.conta_cobranca select * from requinte.tab_contacob;
+
+create table requintebd.cobranca select * from requinte.tab_cobranca;
+

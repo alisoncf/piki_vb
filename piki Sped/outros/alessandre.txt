@@ -1,0 +1,21 @@
+Mãe Bela:
+
+No fechamento da venda (formulário de troco), quando o funcionário não tem permissão para desconto, ao tentar dá um erro de run-time e fecha o programa. O Alessandre disse que elas perdem a vda qdo isso acontece. Ele pediu que o programa solicitasse a senha de um gerente para liberar os descontos.
+
+No formulário de visualização de impressão, informar quantas páginas vai ter o relatório.
+
+Imprimir só os totais do inventário.
+
+No formulário de parâmetros, qdo se muda as taxas e impostos não está salvando a alteração.
+
+Devolução para fornecedores. Ele tentou fazer uma devolução para um fornecedor usando o form de dev. de vda..Ele quer poder voltar o estoque contábil da mercadoria qdo houver dev...
+
+Ele pediu uma impressão do movimento interno, mesmo depois de concluir. (uma edição..)
+
+Ele vai começar a endereçar as mercadorias e salvar no cad. do prod. ele quer que o inventário saia por localização também..para poder contar os prod de uma seção..
+
+Rel de contas a pagar/receber dá erro de impressão..
+
+Processo de compra..
+Ele disse que precisa do processo de compra independente do fornecedor..ao mesmo tempo (num mesmo processo de compra), ele compra de vários fornecedores..
+

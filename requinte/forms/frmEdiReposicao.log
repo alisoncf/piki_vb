@@ -1,0 +1,18 @@
+Line 9: Property Icon in frmEdiReposicao had an invalid file reference.
+Line 48: Property Picture in cmndbtnReabre had an invalid file reference.
+Line 58: Property Picture in cmndbtnCancel had an invalid file reference.
+Line 68: Property Picture in cmndbtnFinalizarVenda had an invalid file reference.
+Line 78: Property Picture in cmndbtnNew had an invalid file reference.
+Line 88: Property Picture in cmndbtnEdit had an invalid file reference.
+Line 99: Property Picture in cmndbtnSair had an invalid file reference.
+Line 109: Property Picture in cmndbtnImpr had an invalid file reference.
+Line 169: Property Picture in cmndbtnBuscar had an invalid file reference.
+Line 177: Property ItemData in cmbxBusca had an invalid file reference.
+Line 179: Property List in cmbxBusca had an invalid file reference.
+Line 196: Property ItemData in cmbxOrd had an invalid file reference.
+Line 198: Property List in cmbxOrd had an invalid file reference.
+Line 206: Property ItemData in cmbxSituacao_ven had an invalid file reference.
+Line 208: Property List in cmbxSituacao_ven had an invalid file reference.
+Line 281: Property Bindings in DBGrid1 had an invalid file reference.
+Line 284: Property OleObjectBlob in DBGrid1 had an invalid file reference.
+Line 280: Cannot load control DBGrid1.

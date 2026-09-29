@@ -1,0 +1,2 @@
+﻿{"mensagem":"Nome de produto já cadastrado id:2385"}
+id_pro=00002383&cod_pro=00002383&cod_sub=019&nome_pro=TAPETE SAO CARLOS BLACK/GREY & WHITE 1.50/2.00&localizacao_pro=&margem_lucro=30&unidade_pro=UN&gtin_pro=SEM GTIN&ncm_pro=57024200&pv_pro=657&pq_pro=0&cf_pro=325,22&cr_pro=325,22
